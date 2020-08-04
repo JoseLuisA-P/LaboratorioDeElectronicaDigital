@@ -1,0 +1,73 @@
+$date
+	Tue Aug 04 15:13:22 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module DIYAL_POS $end
+$var wire 1 ! NM $end
+$var wire 1 " NS $end
+$var wire 1 # NW $end
+$var wire 1 $ lin1 $end
+$var wire 1 % lin2 $end
+$var wire 1 & lin3 $end
+$var wire 1 ' out $end
+$var reg 1 ( M $end
+$var reg 1 ) S $end
+$var reg 1 * W $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+1#
+1"
+1!
+$end
+#1
+0!
+1(
+#2
+1!
+0#
+0(
+1*
+#3
+0!
+1(
+#4
+1'
+1$
+1!
+1#
+0"
+0(
+0*
+1)
+#5
+0$
+1%
+0!
+1(
+#6
+0'
+0%
+1!
+0#
+0(
+1*
+#7
+1'
+1&
+0!
+1(
+#8
