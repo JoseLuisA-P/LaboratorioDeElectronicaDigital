@@ -22,12 +22,12 @@ TestBench para la alarma casera
     #1 $finish;
   end
   // Parte para visualizar el GTKwave
-  /*
+
   initial begin
 
-  $dumpfile("DIYALARM_ST_tb");
+  $dumpfile("DIYALARM_ST_tb.vcd");
   $dumpvars(0, testbench);
 
   end
-  */
+
 endmodule
