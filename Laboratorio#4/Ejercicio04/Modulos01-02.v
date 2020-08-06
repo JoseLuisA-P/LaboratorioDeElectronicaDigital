@@ -73,3 +73,14 @@ module EJ023(
 
 endmodule
 ////////////////////////////////////////////////////////////////
+module EJ024(
+  output wire Y,
+  input wire A,B,C);
+  //modulo asociaido al ejercicio 2 ecuacion 4, laboratorio 04
+  not neg1(NA,A);
+  not neg2(NC,C);
+  and mult1(W1,NA,NC);
+  or sumfinal(Y,W1,B);
+
+endmodule
+////////////////////////////////////////////////////////////////
