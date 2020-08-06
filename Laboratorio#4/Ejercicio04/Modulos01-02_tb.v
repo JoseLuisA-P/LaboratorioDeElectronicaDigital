@@ -13,6 +13,8 @@ module bancodepruebas();
   T02 tab2(sal02,a,b,c);
   //
   T03 tab3(sal03,A,B,C,D);
+  //
+  T04 tab4(sal04,A,B,C,D);
 
   //bloque initial para prueba de tabla01
   initial begin
@@ -57,6 +59,32 @@ module bancodepruebas();
   $display("///////////");
   $display("A| B| C| D| Y");
   $monitor("%b| %b| %b| %b| %b",A, B, C, D, sal03);
+  A=0; B=0; C=0; D=0;
+  #1 A=0; B=0; C=0; D=1;
+  #1 A=0; B=0; C=1; D=0;
+  #1 A=0; B=0; C=1; D=1;
+  #1 A=0; B=1; C=0; D=0;
+  #1 A=0; B=1; C=0; D=1;
+  #1 A=0; B=1; C=1; D=0;
+  #1 A=0; B=1; C=1; D=1;
+  #1 A=1; B=0; C=0; D=0;
+  #1 A=1; B=0; C=0; D=1;
+  #1 A=1; B=0; C=1; D=0;
+  #1 A=1; B=0; C=1; D=1;
+  #1 A=1; B=1; C=0; D=0;
+  #1 A=1; B=1; C=0; D=1;
+  #1 A=1; B=1; C=1; D=0;
+  #1 A=1; B=1; C=1; D=1;
+  end
+
+  //bloque initial para prueba de tabla04
+  initial begin
+  #40
+  $display("///////////");
+  $display("COMIENZO TABLA 04");
+  $display("///////////");
+  $display("A| B| C| D| Y");
+  $monitor("%b| %b| %b| %b| %b",A, B, C, D, sal04);
   A=0; B=0; C=0; D=0;
   #1 A=0; B=0; C=0; D=1;
   #1 A=0; B=0; C=1; D=0;
