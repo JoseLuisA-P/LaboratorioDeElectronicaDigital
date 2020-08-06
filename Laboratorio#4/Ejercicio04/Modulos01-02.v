@@ -33,12 +33,13 @@ module T04(
 
 endmodule
 ////////////////////////////////////////////////////////////////
+
+
 //MODULOS REALIZADOS CON GATELEVEL MODELLING
 ////////////////////////////////////////////////////////////////
 module EJ021(
   output wire Y,
   input wire A,B,C,D);
-
 //modulo asociado a el ejercicio 2 ecuacion 1, laboratorio 04
     not neg1(NA,A);
     not neg2(NB,B);
@@ -50,5 +51,14 @@ module EJ021(
     and mult4(W4,A,NB);
     or sumfinal(Y,W1,W2,W3,W4);
 
+endmodule
+////////////////////////////////////////////////////////////////
+module EJ022(
+  output wire Y,
+  input wire A,B,C);
+  //modulo asociado al ejercicio 2 ecuacion 2, laboratorio 04
+    not neg1(NB,B);
+    or sum1(Y,NB,C);
+    
 endmodule
 ////////////////////////////////////////////////////////////////
