@@ -1,7 +1,7 @@
 module T01(
-  input A,B,C,
-  output Y);
-
-
+  output wire Y,
+  input wire A,B,C);
+//Modulo de la tabla 01, laboratorio 04
+    assign Y = (~A & ~C) | (~B & ~C) | (A & C) ;
 
 endmodule
