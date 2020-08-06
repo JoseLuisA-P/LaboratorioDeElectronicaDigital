@@ -8,7 +8,7 @@ module bancodepruebas();
   wire sal03, sal04;
   //
   reg A2,B2,C2,D2;
-  wire sal21,sal22;
+  wire sal21,sal22,sal23;
 
   //
   T01 tab1(sal01,a,b,c);
@@ -22,6 +22,8 @@ module bancodepruebas();
   EJ021 form1(sal21,A2,B2,C2,D2);
   //
   EJ022 form2(sal22,A2,B2,C2);
+  //
+  EJ023 form3(sal23,A2,B2,C2,D2);
 
   //bloque initial para prueba de tabla01
   initial begin
@@ -152,6 +154,32 @@ module bancodepruebas();
   #1 A2=1; B2=0; C2=1;
   #1 A2=1; B2=1; C2=0;
   #1 A2=1; B2=1; C2=1;
+  end
+
+  //bloque initial para prueba de la formula 3, ejercicio 2
+  initial begin
+  #100
+  $display("///////////");
+  $display("COMIENZO DEL EJERCICIO2 F3");
+  $display("///////////");
+  $display("A| B| C| D| Y");
+  $monitor("%b| %b| %b| %b| %b",A2, B2, C2, D2, sal23);
+  A2=0; B2=0; C2=0; D2=0;
+  #1 A2=0; B2=0; C2=0; D2=1;
+  #1 A2=0; B2=0; C2=1; D2=0;
+  #1 A2=0; B2=0; C2=1; D2=1;
+  #1 A2=0; B2=1; C2=0; D2=0;
+  #1 A2=0; B2=1; C2=0; D2=1;
+  #1 A2=0; B2=1; C2=1; D2=0;
+  #1 A2=0; B2=1; C2=1; D2=1;
+  #1 A2=1; B2=0; C2=0; D2=0;
+  #1 A2=1; B2=0; C2=0; D2=1;
+  #1 A2=1; B2=0; C2=1; D2=0;
+  #1 A2=1; B2=0; C2=1; D2=1;
+  #1 A2=1; B2=1; C2=0; D2=0;
+  #1 A2=1; B2=1; C2=0; D2=1;
+  #1 A2=1; B2=1; C2=1; D2=0;
+  #1 A2=1; B2=1; C2=1; D2=1;
   end
 
   initial

@@ -59,6 +59,17 @@ module EJ022(
   //modulo asociado al ejercicio 2 ecuacion 2, laboratorio 04
     not neg1(NB,B);
     or sum1(Y,NB,C);
-    
+
+endmodule
+////////////////////////////////////////////////////////////////
+module EJ023(
+  output wire Y,
+  input wire A,B,C,D);
+  //modulo asociado al ejercicio 2 ecuacion 3, laboratorio 04
+  not neg1(NC,C);
+  and mult1(W1,NC,D);
+  and mult2(W2,A,D);
+  or sumfinal(Y,W1,W2,B);
+
 endmodule
 ////////////////////////////////////////////////////////////////
