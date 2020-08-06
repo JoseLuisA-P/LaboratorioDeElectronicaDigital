@@ -35,6 +35,7 @@ module bancodepruebas();
 
   //bloque initial para prueba de tabla01
   initial begin
+  $display("\n\n\n");
   $display("///////////");
   $display("COMIENZO TABLA 01");
   $display("///////////");
@@ -123,6 +124,7 @@ module bancodepruebas();
   //bloque initial para prueba de la formula 1, ejercicio 2
   initial begin
   #60
+  $display("\n\n\n");
   $display("///////////");
   $display("COMIENZO DEL EJERCICIO2 F1");
   $display("///////////");
@@ -166,7 +168,7 @@ module bancodepruebas();
 
   //bloque initial para prueba de la formula 3, ejercicio 2
   initial begin
-  #100
+  #90
   $display("///////////");
   $display("COMIENZO DEL EJERCICIO2 F3");
   $display("///////////");
@@ -192,7 +194,7 @@ module bancodepruebas();
 
   //bloque initial para prueba de la formula 4, ejercicio 2
   initial begin
-  #120
+  #110
   $display("///////////");
   $display("COMIENZO DEL EJERCICIO2 F4");
   $display("///////////");
@@ -209,6 +211,11 @@ module bancodepruebas();
   end
 
   initial
-    #200 $finish;
+    #120 $finish;
+
+  initial begin
+  $dumpfile("Modulos01-02_tb.vcd");
+  $dumpvars(0, bancodepruebas);
+  end
 
 endmodule
