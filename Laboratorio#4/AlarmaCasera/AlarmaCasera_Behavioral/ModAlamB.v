@@ -10,9 +10,9 @@ module AlamB(
 
     always @ (A,B,C) begin
 
-        if (A == 1) begin
+        if (A == 1) begin //begin y end para poder anidar
 
-          if (B == 0) Y = 1;
+          if (B == 0) Y = 1; //condiciones simples pueden no llevar el begin y end
 
           else if (C == 1) Y = 1;
 
