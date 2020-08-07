@@ -5,7 +5,7 @@
 //electronica digital
 ////////////////////////////////////////////////////////////////////////////////
 module AlamB(
-  output reg Y,
+  output reg Y, //registro porque tiene que guardar su estado
   input wire A,B,C);
 
     always @ (A,B,C) begin
