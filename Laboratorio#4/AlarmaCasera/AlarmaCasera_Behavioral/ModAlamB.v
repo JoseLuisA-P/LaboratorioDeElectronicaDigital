@@ -5,7 +5,7 @@
 //electronica digital
 ////////////////////////////////////////////////////////////////////////////////
 module AlamB(
-  output wire Y,
+  output reg Y,
   input wire A,B,C);
 
     always @ (A,B,C) begin
@@ -20,6 +20,7 @@ module AlamB(
 
         end
 
+        else if (A == 0) Y = 0;
     end
 
 endmodule
