@@ -6,20 +6,16 @@
 ///////////////////////////////////////////////////////////////////////////////
 module AlamK();
 /*
-POS de la alarma de casa casera.
+Karnaugh de la alarma de casa casera.
 */
   reg A, B, C;
-  wire NA, NB, NC, out, lin1, lin2, lin3, lin4, lin5;
+  wire NB, NC, out, lin1, lin2;
 
-  not neg1(NA,A);
   not neg2(NB,B);
   not neg3(NC,C);
-  or sum1(lin1,A,B,C);
-  or sum2(lin2,A,B,NC);
-  or sum3(lin3,A,NB,C);
-  or sum4(lin4,A,NB,NC);
-  or sum5(lin5,NA,NB,C);
-  and mult1(out,lin1,lin2,lin3,lin4,lin5);
+  and mult1(lin1,A,NB);
+  and mult2(lin2,A,C);
+  or sumfin(out,lin1,lin2);
 
 //Para probar la salida que tendran las compuertas
   initial begin
@@ -39,7 +35,7 @@ POS de la alarma de casa casera.
 
 //utilizado para GTKwave
   initial begin
-  $dumpfile("Alamk_tb.vcd");
+  $dumpfile("AlamK_tb.vcd");
   $dumpvars(0,AlamK);
   end
 
