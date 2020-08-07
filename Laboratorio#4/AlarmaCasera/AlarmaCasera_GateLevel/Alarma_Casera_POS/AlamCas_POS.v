@@ -1,4 +1,10 @@
-module DIYAL_POS();
+///////////////////////////////////////////////////////////////////////////////
+///Jose Luis Alvarez Pineda
+///19392
+///Ingenieria mecatronica
+///Electronica digital
+///////////////////////////////////////////////////////////////////////////////
+module AlamCas_POS();
 /*
 POS de la alarma de casa casera.
 */
@@ -31,8 +37,8 @@ or sum1(out, lin1, lin2, lin3);
 
 //utilizado para GTKwave
   initial begin
-  $dumpfile("DIYAL_POS_tb.vcd");
-  $dumpvars(0,DIYAL_POS);
+  $dumpfile("AlamCas_POS_tb.vcd");
+  $dumpvars(0,AlamCas_POS);
   end
 
 endmodule

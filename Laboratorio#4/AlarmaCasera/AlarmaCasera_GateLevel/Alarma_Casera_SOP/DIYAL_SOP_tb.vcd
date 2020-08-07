@@ -1,5 +1,5 @@
 $date
-	Tue Aug 04 15:13:22 2020
+	Thu Aug 06 20:14:00 2020
 $end
 $version
 	Icarus Verilog
@@ -7,7 +7,7 @@ $end
 $timescale
 	1ps
 $end
-$scope module DIYAL_POS $end
+$scope module DIYAL_SOP $end
 $var wire 1 ! NM $end
 $var wire 1 " NS $end
 $var wire 1 # NW $end
