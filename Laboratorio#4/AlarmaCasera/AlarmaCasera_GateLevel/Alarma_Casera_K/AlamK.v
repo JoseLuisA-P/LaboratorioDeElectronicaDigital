@@ -4,7 +4,7 @@
 ///Ingenieria mecatronica
 ///Electronica digital
 ///////////////////////////////////////////////////////////////////////////////
-module AlamCas_POS();
+module AlamK();
 /*
 POS de la alarma de casa casera.
 */
@@ -39,8 +39,8 @@ POS de la alarma de casa casera.
 
 //utilizado para GTKwave
   initial begin
-  $dumpfile("AlamCas_POS_tb.vcd");
-  $dumpvars(0,AlamCas_POS);
+  $dumpfile("Alamk_tb.vcd");
+  $dumpvars(0,AlamK);
   end
 
 endmodule
