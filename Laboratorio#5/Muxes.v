@@ -34,6 +34,7 @@ module Mux8(
   input wire D0,D1,D2,D3,D4,D5,D6,D7,S0,S1,S2);
 
   wire lin0, lin1; //variables locales
+
   Mux4 selec0(lin0,D0,D1,D2,D3,S0,S1);
   Mux4 selec1(lin1,D4,D5,D6,D7,S0,S1);
   Mux2 selec2(Y,lin0,lin1,S2);
@@ -71,10 +72,16 @@ module MUX8T1(
   output wire Y,
   input wire A,B,C);
 
-  logic D0,D1,D2,D3,D4,D5,D6,D7;
-  D0=D3=D5=D6=0;
-  D1=D2=D4=D7=1;
+  wire D0,D1,D2,D3,D4,D5,D6,D7;
+  assign D0 = 0;
+  assign D1 = 1;
+  assign D2 = 1;
+  assign D3 = 0;
+  assign D4 = 1;
+  assign D5 = 0;
+  assign D6 = 0;
+  assign D7 = 1;
 
-  Mux8 select8t1 (Y,D0,D1,D2,D3,D4,D5,D6,D7,C,D,A);
+  Mux8 select8t1(Y,D0,D1,D2,D3,D4,D5,D6,D7,C,B,A);
 
 endmodule
