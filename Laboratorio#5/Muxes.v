@@ -4,10 +4,25 @@
 //Electronica digital
 // Muxes para el laboratorio 5
 ///////////////////////////////////////////////////////////////////////////////
-
+//MUXES de uso general
 //MUX 2:1 de uso general para la practica
 module Mux2(
-  input wire A,B,S,
-  output wire Y);
+  output wire Y,
+  input wire D0,D1,S);
 
-end module
+    Y = S ? D1:D0; //Si S=1 Y toma el valor de D1 Y si S=0 Y toma el valor de D0
+
+endmodule
+
+module Mux4(
+  output wire Y,
+  input wire D0,D1,D2,D3,S0,S1);
+  logic lin0, lin1;
+
+  Mux2 selec0 (lin0, D0, D1, S0);
+  Mux2 selec1 (lin1, D2, D3, S0);
+  Mux2 selec2 (Y, lin0, lin1, S1);
+
+endmodule
+
+//MUXES para el uso en las tablas
