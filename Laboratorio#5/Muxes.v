@@ -108,4 +108,10 @@ module MUX8T2(
   output wire Y,
   input wire A,B,C);
 
+  wire DG, DV;
+  assign DG = 0;
+  assign DV = 1;
+
+  Mux8 select8t2 (Y,DV,DG,DG,DG,DG,DV,DV,DG,C,B,A);
+
 endmodule
