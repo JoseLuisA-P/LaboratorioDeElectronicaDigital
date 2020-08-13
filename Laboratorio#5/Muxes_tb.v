@@ -131,4 +131,9 @@ module testbench();
     #60 $finish;
     end
 
+initial begin
+  $dumpfile("Muxes_tb.vcd");
+  $dumpvars(0, testbench);
+end
+
 endmodule
