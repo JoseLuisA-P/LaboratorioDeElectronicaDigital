@@ -65,3 +65,16 @@ module MUX4T1(
   Mux4 selec4t1(Y, C, ~C, ~C, C, B, A);
 
 endmodule
+
+//MUX 8:1 exclusivo de la tabla01 del lab5
+module MUX8T1(
+  output wire Y,
+  input wire A,B,C);
+
+  logic D0,D1,D2,D3,D4,D5,D6,D7;
+  D0=D3=D5=D6=0;
+  D1=D2=D4=D7=1;
+
+  Mux8 select8t1 (Y,D0,D1,D2,D3,D4,D5,D6,D7,C,D,A);
+
+endmodule
