@@ -44,3 +44,12 @@ module MUX2T1(
   Mux2 select0 (Y, y1, y2, A);
 
 endmodule
+
+//MUX 4:1 exclusivo de la tabla01 del lab5
+module MUX4T1(
+  output wire Y,
+  input wire A,B,C);
+
+  Mux4 selec4t1(Y, C, ~C, ~C, C, B, A);
+
+endmodule
