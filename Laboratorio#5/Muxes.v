@@ -98,3 +98,15 @@ module MUX2T2(
   Mux2 select2t2 (Y,y1,y2,A);
 
 endmodule
+
+//MUX 4:1 exclusivo de la tabla 02 del lab05
+module MUX4T2(
+  output wire Y,
+  input wire A,B,C);
+
+  wire GG = 0;
+  Mux4 select4t2 (Y, ~C, GG, C, ~C, B, A);
+
+endmodule
+
+// MUX 8:1 exclusivo de la tabla 02 del lab05

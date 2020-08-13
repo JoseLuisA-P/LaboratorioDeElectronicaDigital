@@ -7,7 +7,7 @@
 module testbench();
 
   reg A1,B1,C1, A2, B2, C2;
-  wire Y1, Y2, Y3, Y21;
+  wire Y1, Y2, Y3, Y21, Y41;
 
   //MUX 2:1 de la tabla01
   MUX2T1 sel21(Y1, A1, B1, C1);
@@ -18,6 +18,8 @@ module testbench();
 
   //MUX 2:1 de la tabla02
   MUX2T2 sel22(Y21, A2, B2, C2);
+  //MUX 4:1 de la tabla02
+  MUX4T2 sel42(Y41, A2, B2, C2);
 
 //Combinaciones para el MUX 2:1 de la tabla 01
     initial begin
@@ -87,8 +89,26 @@ module testbench();
     #1 A2=1; B2=1; C2=1;
     end
 
+// combinaciones para el MUX4:1 de la tabla 02
     initial begin
-    #40 $finish;
+    #40
+    $display("\n\n");
+    $display("------------------");
+    $display("TABLA 02 / MUX 4:1");
+    $display("A| B| C| Y");
+    $monitor("%b| %b| %b| %b", A2, B2, C2, Y41);
+    A2=0; B2=0; C2=0;
+    #1 A2=0; B2=0; C2=1;
+    #1 A2=0; B2=1; C2=0;
+    #1 A2=0; B2=1; C2=1;
+    #1 A2=1; B2=0; C2=0;
+    #1 A2=1; B2=0; C2=1;
+    #1 A2=1; B2=1; C2=0;
+    #1 A2=1; B2=1; C2=1;
+    end
+
+    initial begin
+    #50 $finish;
     end
 
 endmodule
