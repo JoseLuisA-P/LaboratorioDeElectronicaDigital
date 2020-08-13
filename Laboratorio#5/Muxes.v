@@ -85,3 +85,16 @@ module MUX8T1(
   Mux8 select8t1(Y,D0,D1,D2,D3,D4,D5,D6,D7,C,B,A);
 
 endmodule
+
+//MUX 2:1 exclusivo de la tabla 02 del lab5
+module MUX2T2(
+  output wire Y,
+  input wire A,B,C);
+
+  wire y1,y2; //variables locales
+  assign y1 = B ~| C;
+  assign y2 = B ^ C;
+
+  Mux2 select2t2 (Y,y1,y2,A);
+
+endmodule
