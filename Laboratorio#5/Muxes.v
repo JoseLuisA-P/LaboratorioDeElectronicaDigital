@@ -28,6 +28,18 @@ module Mux4(
 
 endmodule
 
+//MUX 8:1 de uso general para la practica
+module Mux8(
+  output wire Y,
+  input wire D0,D1,D2,D3,D4,D5,D6,D7,S0,S1,S2);
+
+  wire lin0, lin1; //variables locales
+  Mux4 selec0(lin0,D0,D1,D2,D3,S0,S1);
+  Mux4 selec1(lin1,D4,D5,D6,D7,S0,S1);
+  Mux2 selec2(Y,lin0,lin1,S2);
+
+endmodule
+
 ////////////////////////////////////////////////////////////////////////////////
 //MUXES para el uso en las tablas
 
