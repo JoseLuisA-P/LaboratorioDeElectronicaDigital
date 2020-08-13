@@ -72,17 +72,11 @@ module MUX8T1(
   output wire Y,
   input wire A,B,C);
 
-  wire D0,D1,D2,D3,D4,D5,D6,D7;
-  assign D0 = 0;
-  assign D1 = 1;
-  assign D2 = 1;
-  assign D3 = 0;
-  assign D4 = 1;
-  assign D5 = 0;
-  assign D6 = 0;
-  assign D7 = 1;
+  wire DG, DV;
+  assign DG = 0;
+  assign DV = 1;
 
-  Mux8 select8t1(Y,D0,D1,D2,D3,D4,D5,D6,D7,C,B,A);
+  Mux8 select8t1(Y,DG,DV,DV,DG,DV,DG,DG,DV,C,B,A);
 
 endmodule
 
@@ -110,3 +104,8 @@ module MUX4T2(
 endmodule
 
 // MUX 8:1 exclusivo de la tabla 02 del lab05
+module MUX8T2(
+  output wire Y,
+  input wire A,B,C);
+
+endmodule
