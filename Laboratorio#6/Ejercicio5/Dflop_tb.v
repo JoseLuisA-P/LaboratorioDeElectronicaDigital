@@ -7,7 +7,6 @@ wire[3:0] Y; // cable que si acepta asignacion continua (mantiene el valor de la
 
 Dflop df1(clk, reset, D, Y); //para crear el flip flop
 
-
 initial begin
 //bloque para generar el reloj, inicia en 0 y cada 10 unidades de tiempo
 //cambia su estado.
@@ -17,15 +16,29 @@ initial begin
 end
 
 initial begin
-  $monitor("%b %b %b",reset,clk,Y);
   reset = 1;
-  #38 reset = 0; D = 4'b0010;
-  #48 reset = 0; D = 4'b1110;
-  #68 reset = 0; D = 4'b1010;
+  #50;
+  reset = 0; D = 4'b0010;
+  #50;
+  D = 4'b1110;
+  #50;
+  D = 4'b1010;
+  #50;
+  reset = 1; D = 4'b1010;
+  #20;
+  reset = 0; D = 4'b1111;
+  #20;
+  D = 4'b0101;
 end
 
 initial begin
 //para terminar la simulacion
-  #200 $finish;
+  #300 $finish;
 end
+
+initial begin
+$dumpfile("Dflop_tb.vcd");
+$dumpvars(0,testbench);
+end
+
 endmodule
