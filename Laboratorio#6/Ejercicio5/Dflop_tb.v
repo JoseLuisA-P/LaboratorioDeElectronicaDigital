@@ -17,11 +17,15 @@ initial begin
 end
 
 initial begin
-  $monitor("%b",clk);
+  $monitor("%b %b %b",reset,clk,Y);
+  reset = 1;
+  #38 reset = 0; D = 4'b0010;
+  #48 reset = 0; D = 4'b1110;
+  #68 reset = 0; D = 4'b1010;
 end
 
 initial begin
 //para terminar la simulacion
-  #100 $finish;
+  #200 $finish;
 end
 endmodule
