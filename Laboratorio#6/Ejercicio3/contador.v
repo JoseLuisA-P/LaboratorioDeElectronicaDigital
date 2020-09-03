@@ -30,7 +30,7 @@ module EJ3(input logic clk,
   wire[2:0] S;
 
   Dflop FD1 (clk, reset, S, sal);
-  
+
   assign S[2] = (sal[2] & sal[0]) | (sal[1] & ~ sal[0] & A) | (~sal[1] & ~sal[0] & ~A);
   assign S[1] = (sal[1] & ~sal[0]) | (~sal[2] & sal[0] & A) | (sal[2] & sal[0] & ~A);
   assign S[0] = (sal[2] & sal[1] & A) | (~sal[2] & ~sal[1] & A) | (~sal[2] & sal[1] & ~A)
