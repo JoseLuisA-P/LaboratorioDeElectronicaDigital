@@ -24,7 +24,15 @@ endmodule
 ///////////////////////////////////////////////////////////////////////////////
 module EJ1(input logic clk,
   input logic reset,A,B,
+  output wire Y,
   output wire[1:0] SAL);
 
+  wire[1:0] S;
+
+  Dflop DF1 (clk, reset, S, SAL);
+
+  assign S[1] = (SAL[0] & B) | (SAL[1] & A & B);
+  assign S[0] = (~SAL[1] & A & ~SAL[0]);
+  assign Y = (SAL[1] & A & B);
 
 endmodule
