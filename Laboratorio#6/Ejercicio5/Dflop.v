@@ -5,7 +5,7 @@
 ///Laboratorio #06, diseño de flip-flop tipo D con reset asincrono y set sincrono
 ///////////////////////////////////////////////////////////////////////////////
 module Dflop(input logic clk,
-  input logic areset,
+  input logic areset, set,
   input logic[3:0] D,
   output reg[3:0] Y);
 //areset es el reset asincrono en el flip flop, no es necesario el clock para cambiar el
@@ -14,8 +14,12 @@ module Dflop(input logic clk,
       //if para evitar que otro valor pase cuando se active el reset
       if(areset)
       Y <= 4'b0000;
-      else
-      Y <= D;
+      else begin
+        if(set == 1)
+        Y <= 4'b1111;
+        else
+        Y <= D;
+      end
   end
 
 endmodule

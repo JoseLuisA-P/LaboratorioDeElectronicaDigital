@@ -3,9 +3,10 @@ module testbench();
 reg[3:0] D; // ya que no se utilizan valores de asignacion continua
 reg clk;    // se asignan como registros
 reg reset;
+reg set;
 wire[3:0] Y; // cable que si acepta asignacion continua (mantiene el valor de la salida del FF)
 
-Dflop df1(clk, reset, D, Y); //para crear el flip flop
+Dflop df1(clk, reset, set, D, Y); //para crear el flip flop
 
 initial begin
 //bloque para generar el reloj, inicia en 0 y cada 10 unidades de tiempo
@@ -17,8 +18,12 @@ end
 
 initial begin
   reset = 1;
+  set= 0;
+  #20;
+  reset = 0;
+  set = 1;
   #50;
-  reset = 0; D = 4'b0010;
+  set = 0; reset = 0; D = 4'b0010;
   #50;
   D = 4'b1110;
   #50;
@@ -26,9 +31,9 @@ initial begin
   #50;
   reset = 1; D = 4'b1010;
   #20;
-  reset = 0; D = 4'b1111;
+  set = 1; reset = 0; D = 4'b0101;
   #20;
-  D = 4'b0101;
+  set = 0; D = 4'b0101;
 end
 
 initial begin
