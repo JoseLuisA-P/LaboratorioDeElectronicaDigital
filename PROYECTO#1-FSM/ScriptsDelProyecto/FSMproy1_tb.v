@@ -19,6 +19,7 @@ initial begin
 end
 ///////////////////////////////////////////////////////////////////////////////
 initial begin
+//primera prueba
 RESET = 1; Cafe = 0; Te= 0; Leche= 0; Agua = 0; Nada = 0; Vainilla = 0;
 #1 RESET = 0; Cafe = 1; Te = 1; Leche =1; Agua =1; Nada =1; Vainilla =1;
 #2 Cafe = 0; Te = 0; Leche =0; Agua = 0; Nada =0; Vainilla =0;
