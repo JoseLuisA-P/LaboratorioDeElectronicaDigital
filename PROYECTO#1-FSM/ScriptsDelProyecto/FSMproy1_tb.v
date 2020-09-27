@@ -19,7 +19,7 @@ initial begin
 end
 ///////////////////////////////////////////////////////////////////////////////
 initial begin
-//primera prueba
+//primera prueba, timming 1
 RESET = 1; Cafe = 0; Te= 0; Leche= 0; Agua = 0; Nada = 0; Vainilla = 0;
 #1 RESET = 0; Cafe = 1; Te = 1; Leche =1; Agua =1; Nada =1; Vainilla =1;
 #2 Cafe = 0; Te = 0; Leche =0; Agua = 0; Nada =0; Vainilla =0;
@@ -32,6 +32,27 @@ RESET = 1; Cafe = 0; Te= 0; Leche= 0; Agua = 0; Nada = 0; Vainilla = 0;
 #2 Nada = 0; Vainilla = 0;
 #2 Nada = 1;
 #2 Nada = 0;
+
+//segunda prueba, timming 2
+#10 RESET = 1; Leche = 0;
+#2 RESET = 0;
+#2 Cafe = 1;
+#4 RESET = 1;
+#1 Cafe = 0;
+#1 RESET = 0;
+#2 Te = 1;
+#4 RESET = 1;
+#1 Te = 0;
+#1 RESET = 0;
+
+//tercera prueba, timming 2
+#10 Cafe = 1;
+#4 Cafe = 0; Leche = 1;
+#4 RESET = 1; Leche = 0;
+#2 Cafe = 1; RESET = 0;
+#4 Cafe = 0; Agua = 1;
+#2 RESET = 1; Agua = 0;
+#2 RESET = 0;
 
 end
 ///////////////////////////////////////////////////////////////////////////////
