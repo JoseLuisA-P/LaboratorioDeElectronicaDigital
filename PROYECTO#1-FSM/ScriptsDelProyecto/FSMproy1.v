@@ -24,11 +24,8 @@ endmodule
 module SFMSelector(
   input areset,clk,
   input wire C,T,L,A,N,V,
-  output wire[3:0]SA);
-//cables para simular la entrada de los estados futuros
- wire [3:0] Sf;
-//REGISTRO INTERNO S PARA EL FLIPFLOP
- reg [3:0] S;
+  output wire [3:0]S,
+  output wire [3:0]Sf);
 
  Dflop FF1 (areset, clk, Sf, S);
 
@@ -49,7 +46,6 @@ module SFMSelector(
                 | (~S[3] & ~S[1] & S[0] & ~L) | (~S[3] & ~S[1] & S[0] & A) | (S[3] & ~S[2] & S[0] & N) |
                 (~S[2] & S[1] & S[0] & ~N) | (~S[2] & S[1] & S[0] & V) | (S[3] & ~S[2] & S[0] & ~V) |
                 (~S[3] & ~S[2] & ~S[1] & ~S[0] & C & ~T);
-
 //ASIGNACION DE LAS SALIDAS DEL MODULO
 
 endmodule
