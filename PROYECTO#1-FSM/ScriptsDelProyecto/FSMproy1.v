@@ -27,10 +27,12 @@ module SFMSelector(
   output wire[3:0]SA);
 //cables para simular la entrada de los estados futuros
  wire [3:0] Sf;
+//REGISTRO INTERNO S PARA EL FLIPFLOP
  reg [3:0] S;
 
  Dflop FF1 (areset, clk, Sf, S);
 
+//SON LOS ESTADOS FUTUROS INTERNOS DE LA MAQUINA
  assign Sf[3] = (S[3] & ~S[2]) | (S[3] & ~S[1]) | (~S[2] & ~S[1] & ~S[0] & ~C & T);
 
  assign Sf[2] = (~S[3] & S[2]) | (S[2] & ~S[1]) | (S[2] & ~S[0]) | (~S[3] & S[1] & ~N & V)
@@ -42,6 +44,12 @@ module SFMSelector(
                 (~S[3] & S[1] & S[0]) | (S[3] & ~S[2] & S[1] & V) | (~S[2] & S[1] & N & V) |
                 (~S[2] & S[1] & ~N & ~V) | (S[3] & ~S[2] & ~S[1] & ~S[0] & ~L & A) ;
 
- assign Sf[0] = () | () | () | () | () | () | () | () | () | () | () | ();
+ assign Sf[0] = (~S[3] & S[2] & S[0]) | (S[2] & ~S[1] & S[0]) | (~S[3] & ~S[2] & S[1] & ~N & V) |
+                (S[3] & ~S[2] & S[1] & N & ~V) | (S[3] & ~S[2] & ~S[1] & ~S[0] & L & ~A) |
+                | (~S[3] & ~S[1] & S[0] & ~L) | (~S[3] & ~S[1] & S[0] & A) | (S[3] & ~S[2] & S[0] & N) |
+                (~S[2] & S[1] & S[0] & ~N) | (~S[2] & S[1] & S[0] & V) | (S[3] & ~S[2] & S[0] & ~V) |
+                (~S[3] & ~S[2] & ~S[1] & ~S[0] & C & ~T);
+
+//ASIGNACION DE LAS SALIDAS DEL MODULO
 
 endmodule
