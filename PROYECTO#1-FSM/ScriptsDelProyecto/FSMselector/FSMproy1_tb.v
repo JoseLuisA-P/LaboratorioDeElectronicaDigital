@@ -45,7 +45,7 @@ RESET = 1; Cafe = 0; Te= 0; Leche= 0; Agua = 0; Nada = 0; Vainilla = 0;
 #1 Te = 0;
 #1 RESET = 0;
 
-//tercera prueba, timming 2
+//tercera prueba, timming 3
 #10 Cafe = 1;
 #4 Cafe = 0; Leche = 1;
 #4 RESET = 1; Leche = 0;
@@ -53,6 +53,16 @@ RESET = 1; Cafe = 0; Te= 0; Leche= 0; Agua = 0; Nada = 0; Vainilla = 0;
 #4 Cafe = 0; Agua = 1;
 #2 RESET = 1; Agua = 0;
 #2 RESET = 0;
+
+//cuarta prueba, timming 4
+#10 Te= 1;
+#4 Te = 0; Leche = 1;
+#4 RESET = 1; Leche = 0;
+#2 Te = 1; RESET = 0;
+#4 Te= 0; Agua = 1;
+#2 RESET = 1; Agua = 0;
+#2 RESET = 0;
+
 
 end
 ///////////////////////////////////////////////////////////////////////////////
