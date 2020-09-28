@@ -3,8 +3,9 @@ reg Cafe, Te, Leche, Agua, Nada, Vainilla;
 reg RESET, CLK, CLK2;
 wire [3:0]Sactual;
 wire [3:0]Sfuturo;
+wire [3:0]SA;
 
-SFMSelector fs1(RESET, CLK, Cafe, Te, Leche, Agua, Nada, Vainilla, Sactual, Sfuturo);
+SFMSelector fs1(RESET, CLK, Cafe, Te, Leche, Agua, Nada, Vainilla, Sactual, Sfuturo, SA);
 
 //CLOCK 1, para las FSM
 initial begin
@@ -63,11 +64,84 @@ RESET = 1; Cafe = 0; Te= 0; Leche= 0; Agua = 0; Nada = 0; Vainilla = 0;
 #2 RESET = 1; Agua = 0;
 #2 RESET = 0;
 
+//quinta prueba, timming 5
+#10 Cafe = 1;
+#4 Cafe = 0; Leche = 1;
+#2 Leche = 0; Nada = 1;
+#4 RESET = 1; Nada = 0;
+#2 RESET = 0;
+#8 Cafe = 1;
+#4 Cafe = 0; Leche = 1;
+#2 Leche = 0; Vainilla = 1;
+#4 RESET = 1; Vainilla = 0;
+#2 RESET = 0;
+
+#10 Cafe = 1;
+#4 Cafe = 0; Agua = 1;
+#2 Agua = 0; Nada = 1;
+#4 RESET = 1; Nada = 0;
+#2 RESET = 0;
+#8 Cafe = 1;
+#4 Cafe = 0; Agua = 1;
+#2 Agua = 0; Vainilla = 1;
+#4 RESET = 1; Vainilla = 0;
+#2 RESET = 0;
+
+//sexta prueba, timming 6
+#10 Te = 1;
+#4 Te = 0; Leche = 1;
+#2 Leche = 0; Nada = 1;
+#4 RESET = 1; Nada = 0;
+#2 RESET = 0;
+#8 Te = 1;
+#4 Te = 0; Leche = 1;
+#2 Leche = 0; Vainilla = 1;
+#4 RESET = 1; Vainilla = 0;
+#2 RESET = 0;
+
+#10 Te = 1;
+#4 Te = 0; Agua = 1;
+#2 Agua = 0; Nada = 1;
+#4 RESET = 1; Nada = 0;
+#2 RESET = 0;
+#8 Te = 1;
+#4 Te = 0; Agua = 1;
+#2 Agua = 0; Vainilla = 1;
+#4 RESET = 1; Vainilla = 0;
+#2 RESET = 0;
+
+//Septima prueba, timing 7
+#6 Cafe = 1; Leche = 1; Nada = 1;
+#8 RESET = 1; Nada = 0;
+#2 RESET =0; Vainilla = 1;
+#8 RESET =1; Vainilla = 0;
+#2 RESET = 0; Cafe = 0; Leche = 0;
+
+//Octava prueba, timing 8
+#6 Cafe = 1; Agua = 1; Nada = 1;
+#8 RESET = 1; Nada = 0;
+#2 RESET =0; Vainilla = 1;
+#8 RESET =1; Vainilla = 0;
+#2 RESET = 0; Cafe = 0; Agua = 0;
+
+//Septima prueba, timing 9
+#6 Te = 1; Leche = 1; Nada = 1;
+#8 RESET = 1; Nada = 0;
+#2 RESET =0; Vainilla = 1;
+#8 RESET =1; Vainilla = 0;
+#2 RESET = 0; Te = 0; Leche = 0;
+
+//Octava prueba, timing 10
+#6 Te = 1; Agua = 1; Nada = 1;
+#8 RESET = 1; Nada = 0;
+#2 RESET =0; Vainilla = 1;
+#8 RESET =1; Vainilla = 0;
+#2 RESET = 0; Te = 0; Agua = 0;
 
 end
 ///////////////////////////////////////////////////////////////////////////////
 initial begin
-  #100 $finish;
+  #400 $finish;
 end
 
 initial begin

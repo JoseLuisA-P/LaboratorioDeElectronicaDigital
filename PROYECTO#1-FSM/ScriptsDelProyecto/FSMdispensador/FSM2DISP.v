@@ -1,0 +1,22 @@
+///////////////////////////////////////////////////////////////////////////////
+///Jose Luis Alvarez Pineda
+///19392
+///Electronica digital
+///Proyecto 1
+///FSM del selector
+///////////////////////////////////////////////////////////////////////////////
+
+//implementacion de un FF con solo reset asincrono y es del tipo D
+module Dflop(
+  input wire areset, clk,
+  input wire [3:0] D,
+  output reg [3:0] Y);
+
+    always @ ( posedge clk, posedge areset) begin
+      if (areset) Y <= 4'b0000;
+      else Y <= D;
+    end
+
+endmodule
+
+////////////////////////////////////////////////////////////////////////////////
