@@ -23,6 +23,7 @@ endmodule
 module FSMdisp(
   input wire RESET, CLK,
   input wire E, A, B, C,
+  input wire [3:0] SA,
   input wire [2:0] CIN,
   output wire [1:0] M1,
   output wire [1:0] M2,
@@ -34,7 +35,20 @@ module FSMdisp(
   Dflop FF1estado (RESET, CLK, Sf, S);
 
 //estados futuros de la maquina de dispensar
+assign Sf[3] = (S[3] & ~S[2] & ~S[1]) | (~S[3] & S[2] & S[1] & ~S[0] & SA[2]);
 
+assign Sf[2] = (~S[3] & S[2] & ~S[1]) | (~S[3] & S[1] & S[0]) | (~S[3] & S[2] & ~SA[2]);
 
+assign Sf[1] = (~S[3] & S[2] & S[1] & S[0]) | (~S[3] & ~S[2] & S[1] & ~S[0]) |
+                (~S[3] & S[2] & ~S[1] & B) | (~S[3] & ~S[2] & ~S[1] S[0] & A) |
+                (~S[3] & ~S[2] & ~S[0] & SA[3] & ~SA[2] & SA[0] & CIN[2] & CIN[1] & E) |
+                (~S[3] & ~S[2] & ~S[0] & SA[3] & SA[0] & CIN[2] & CIN[1] & CIN[0] & E) |
+                (~S[3] & S[1] & ~S[0] & ~SA[2]);
+
+assign Sf[0] = (~S[2] & ~S[1] & S[0]) | (~S[3] & S[2] & S[1] & S[0]) | (~S[3] & S[2] & S[1] & ~SA[2]) |
+                (S[3] & ~S[2] & ~S[1] & C) | (~S[3] & ~S[2] & S[1] & ~S[0] & A) |
+                (~S[3] & ~S[2] & ~S[1] & SA[3] & ~SA[2] & ~SA[0] & CIN[2] & CIN[1] & E) |
+                (~S[3] & ~S[2] & ~S[1] & SA[3] & ~SA[0] & CIN[2] & CIN[1] & CIN[0] & E) |
+                (~S[3] & S[1] & S[0] & SA[1]) | (~S[3] & ~S[1] & S[0] & ~B) ;
 //salidas de la maquina de dispensar
 endmodule
