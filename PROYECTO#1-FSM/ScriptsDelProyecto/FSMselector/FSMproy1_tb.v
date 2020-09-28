@@ -13,11 +13,6 @@ initial begin
   forever #1 CLK = ~CLK; //cambio ininterrumpido del CLOCK durante todo el tiempo.
 end
 
-//CLOCK2, para los timmers asumido en segundos
-initial begin
-  CLK2 = 0;
-  forever #10 CLK2 = ~CLK2;//cambio ininterrumpido del CLOCK 2 durante todo el tiempo
-end
 ///////////////////////////////////////////////////////////////////////////////
 initial begin
 //primera prueba, timming 1
