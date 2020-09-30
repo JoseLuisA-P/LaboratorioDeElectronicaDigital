@@ -26,9 +26,32 @@ module BancoDePrueba();
 
 
   initial begin
+  //timming 1, transicioines del estado 0 al 1 y restricciones
   RESET = 1; E = 0; A = 0; B = 0; C = 0; CIN = 3'b000; SA = 4'b0000;
-  #1 RESET = 0; SA = 4'b1111; CIN = 3'b111;
-  #3 E = 1;
+  #1 RESET = 0; SA = 4'b0100; CIN = 3'b001; E = 1;
+  #1 CIN = 3'b011;
+  #1 CIN = 3'b010;
+  #1 CIN = 3'b110;
+  #2 SA = 4'b1100;
+  #2 SA = 4'b1000;
+  #5 RESET = 1; CIN = 3'b111; SA = 4'b1000;
+  #1 RESET = 0;
+  #5 RESET = 1; SA = 4'b1100;
+  #1 RESET = 0;
+
+  //timming 2, transiionces del estado 0 al 2 y restricciones
+  #7 RESET = 1;
+  #1 RESET = 0; SA = 4'b0101; CIN = 3'b001; E = 1;
+  #1 CIN = 3'b011;
+  #1 CIN = 3'b010;
+  #1 CIN = 3'b110;
+  #2 SA = 4'b1101;
+  #2 SA = 4'b1001;
+  #5 RESET = 1; CIN = 3'b111; SA = 4'b1001;
+  #1 RESET = 0;
+  #5 RESET = 1; SA = 4'b1101; E = 0;
+  #1 RESET = 0;
+
   end
 
   initial begin
