@@ -1,0 +1,29 @@
+[*]
+[*] GTKWave Analyzer v3.3.77 (w)1999-2016 BSI
+[*] Wed Sep 30 22:39:49 2020
+[*]
+[dumpfile] "C:\Users\jalva\OneDrive\Desktop\UVG\UVG 4to semestre\Digital\Laboratorios\Laboratorios_de_electronica_Digital\LaboratorioDeElectronicaDigital\PROYECTO#1-FSM\ScriptsDelProyecto\FSMdispensador\FSM2DISP_tb.vcd"
+[dumpfile_mtime] "Wed Sep 30 22:38:02 2020"
+[dumpfile_size] 2335
+[savefile] "C:\Users\jalva\OneDrive\Desktop\UVG\UVG 4to semestre\Digital\Laboratorios\Laboratorios_de_electronica_Digital\LaboratorioDeElectronicaDigital\PROYECTO#1-FSM\ScriptsDelProyecto\FSMdispensador\FSM2DISP_tb.gtkw"
+[timestart] 0
+[size] 1428 774
+[pos] -92 -99
+*-2.907605 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 197
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 214
+@28
+BancoDePrueba.CIN[2:0]
+@29
+BancoDePrueba.SA[3:0]
+@28
+BancoDePrueba.E
+BancoDePrueba.CLK
+@24
+BancoDePrueba.Sfuturo[3:0]
+@22
+BancoDePrueba.Sactual[3:0]
+[pattern_trace] 1
+[pattern_trace] 0
