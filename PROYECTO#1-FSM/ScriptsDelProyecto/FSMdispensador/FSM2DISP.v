@@ -51,4 +51,13 @@ assign Sf[0] = (~S[2] & ~S[1] & S[0]) | (~S[3] & S[2] & S[1] & S[0]) | (~S[3] & 
                 (~S[3] & ~S[2] & ~S[1] & SA[3] & ~SA[0] & CIN[2] & CIN[1] & CIN[0] & E) |
                 (~S[3] & S[1] & S[0] & SA[1]) | (~S[3] & ~S[1] & S[0] & ~B) ;
 //salidas de la maquina de dispensar
+assign M1[1] = ;
+assign M1[0] = ;
+assign M2[1] = ;
+assign M2[0] = ;
+assign M3 = ;
+assign Li = ;
+assign IND[2] = ;
+assign IND[1] = ;
+assign IND[0] = ;
 endmodule

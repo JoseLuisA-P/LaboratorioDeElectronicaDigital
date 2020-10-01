@@ -66,12 +66,26 @@ module BancoDePrueba();
   #9 RESET = 1; A = 0; E = 0; B = 0;
   #1 RESET = 0;
 
-  //timming 5, transiciones del estado
+  //timming 5, transiciones del estado con total dispensado
+  #4 CIN = 3'b111; SA = 4'b1100; E = 1;
+  #6 A = 1;
+  #6 B = 1;
+  #6 C = 1;
+  #9 RESET = 1; A = 0; E = 0; B = 0; C = 0;
+  #1 RESET = 0;
+
+  //timming 6, transiciones de los estados con total dispensado
+  #4 CIN = 3'b111; SA = 4'b1111; E = 1;
+  #6 A = 1;
+  #6 B = 1;
+  #6 C = 1;
+  #9 RESET = 1; A = 0; E = 0; B = 0; C = 0;
+  #1 RESET = 0;
 
   end
 
   initial begin
-  #100 $finish;
+  #200 $finish;
   end
 
   initial begin
