@@ -24,23 +24,33 @@ endmodule
 ///TIMMERS
 ///////////////////////////////////////////////////////////////////////////////
 module timmer(
-  input CLK,
+  input wire CLK,
   input wire [1:0] M,
-  output reg Y);
+  output reg Y,
+  output reg[2:0] count);
 
-  reg[2:0] tiempo = 2'b000;
+  reg[2:0] tiempo = 3'b000;
+  reg permit = 1;
 
 always @ ( posedge CLK, M[1], M[0]) begin
   if(CLK == 1)begin
 
-      if(M[1] == 1)begin
-        tiempo <= tiempo + 2'b001;
+      if((M[1] == 1) & (permit == 1))begin
+        tiempo <= tiempo + 3'b001;
+        Y <= 0;
       end
 
-      else if(M[0] == 1)begin
-        tiempo <= tiempo + 2'b001;
+      else if((M[0] == 1) & (permit == 1))begin
+        tiempo <= tiempo + 3'b001;
+        Y <= 0;
       end
 
+      if (tiempo == 3'b101)begin
+        Y <= 1;
+        permit <= 0;
+      end
+
+      count <= tiempo;
   end
 end
 
