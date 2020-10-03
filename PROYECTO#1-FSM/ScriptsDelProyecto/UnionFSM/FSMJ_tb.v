@@ -64,8 +64,8 @@ ResetManual = 1;
 #1 ResetManual = 0; E = 0; C = 0; T = 0; A = 0; L = 0; N = 0; V = 0; CIN = 3'b000;
 #3 C = 1;
 #2 C = 0; L = 1;
-#3 L = 0; N = 1;
-#2 N = 0; CIN = 3'b111;
+#3 L = 0; V = 1;
+#2 V = 0; CIN = 3'b111;
 #3 E = 1;
 #2 E = 0;
 end
