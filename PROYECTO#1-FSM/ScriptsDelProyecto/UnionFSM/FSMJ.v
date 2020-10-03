@@ -23,8 +23,9 @@ endmodule
 ///
 ///TIMMERS
 ///////////////////////////////////////////////////////////////////////////////
-module timmer(
+module timmerA(
   input wire CLK,
+  input wire RESET,
   input wire [1:0] M,
   output reg Y,
   output reg[2:0] count);
@@ -32,8 +33,16 @@ module timmer(
   reg[2:0] tiempo = 3'b000;
   reg permit = 1;
 
-always @ ( posedge CLK, M[1], M[0]) begin
+always @ ( posedge CLK, M[1], M[0], RESET) begin
+
+if(RESET == 1)begin
+  tiempo <= 3'b000;
+  Y <= 0;
+  permit <= 1;
+end
+
   if(CLK == 1)begin
+
 
       if((M[1] == 1) & (permit == 1))begin
         tiempo <= tiempo + 3'b001;
@@ -55,6 +64,89 @@ always @ ( posedge CLK, M[1], M[0]) begin
 end
 
 endmodule
+
+module timmerB(
+  input wire CLK,
+  input wire RESET,
+  input wire [1:0] M,
+  output reg Y,
+  output reg[2:0] count);
+
+  reg[2:0] tiempo = 3'b000;
+  reg permit = 1;
+
+always @ ( posedge CLK, M[1], M[0], RESET) begin
+
+if(RESET == 1)begin
+  tiempo <= 3'b000;
+  Y <= 0;
+  permit <= 1;
+end
+
+  if(CLK == 1)begin
+
+      if((M[1] == 1) & (permit == 1))begin
+        tiempo <= tiempo + 3'b001;
+        Y <= 0;
+      end
+
+      else if((M[0] == 1) & (permit == 1))begin
+        tiempo <= tiempo + 3'b001;
+        Y <= 0;
+      end
+
+      if (tiempo == 3'b110)begin
+        Y <= 1;
+        permit <= 0;
+      end
+
+      count <= tiempo;
+  end
+end
+
+endmodule
+
+module timmerC(
+  input wire CLK,
+  input wire RESET,
+  input wire [1:0] M,
+  output reg Y,
+  output reg[2:0] count);
+
+  reg[2:0] tiempo = 3'b000;
+  reg permit = 1;
+
+always @ ( posedge CLK, M[1], M[0], RESET) begin
+
+if(RESET == 1)begin
+  tiempo <= 3'b000;
+  Y <= 0;
+  permit <= 1;
+end
+
+  if(CLK == 1)begin
+
+      if((M[1] == 1) & (permit == 1))begin
+        tiempo <= tiempo + 3'b001;
+        Y <= 0;
+      end
+
+      else if((M[0] == 1) & (permit == 1))begin
+        tiempo <= tiempo + 3'b001;
+        Y <= 0;
+      end
+
+      if (tiempo == 3'b011)begin
+        Y <= 1;
+        permit <= 0;
+      end
+
+      count <= tiempo;
+  end
+end
+
+endmodule
+
 ///////////////////////////////////////////////////////////////////////////////
 ///
 ///MAQUINA DISPENSADORA

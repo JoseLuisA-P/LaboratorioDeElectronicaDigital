@@ -1,0 +1,60 @@
+[*]
+[*] GTKWave Analyzer v3.3.77 (w)1999-2016 BSI
+[*] Sat Oct 03 00:00:26 2020
+[*]
+[dumpfile] "C:\Users\jalva\OneDrive\Desktop\UVG\UVG 4to semestre\Digital\Laboratorios\Laboratorios_de_electronica_Digital\LaboratorioDeElectronicaDigital\PROYECTO#1-FSM\ScriptsDelProyecto\UnionFSM\FSMJ_tb.vcd"
+[dumpfile_mtime] "Fri Oct 02 23:57:33 2020"
+[dumpfile_size] 9543
+[savefile] "C:\Users\jalva\OneDrive\Desktop\UVG\UVG 4to semestre\Digital\Laboratorios\Laboratorios_de_electronica_Digital\LaboratorioDeElectronicaDigital\PROYECTO#1-FSM\ScriptsDelProyecto\UnionFSM\FSMJ_tb.gtkw"
+[timestart] 85
+[size] 1674 876
+[pos] -60 -28
+*-2.907605 103 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 197
+[signals_width] 222
+[sst_expanded] 1
+[sst_vpaned_height] 249
+@28
+BANCODEPRUEBA.C
+BANCODEPRUEBA.T
+BANCODEPRUEBA.L
+BANCODEPRUEBA.A
+BANCODEPRUEBA.N
+BANCODEPRUEBA.V
+BANCODEPRUEBA.FuturosSelector[3:0]
+BANCODEPRUEBA.ActualesSelector[3:0]
+BANCODEPRUEBA.SA[3:0]
+BANCODEPRUEBA.E
+BANCODEPRUEBA.taima
+BANCODEPRUEBA.counta[2:0]
+BANCODEPRUEBA.taimb
+BANCODEPRUEBA.countb[2:0]
+BANCODEPRUEBA.taimc
+BANCODEPRUEBA.countc[2:0]
+BANCODEPRUEBA.CIN[2:0]
+@24
+BANCODEPRUEBA.FuturosDispensador[3:0]
+BANCODEPRUEBA.ActualesDispensador[3:0]
+@c00028
+[color] 5
+BANCODEPRUEBA.M1[1:0]
+@28
+(0)BANCODEPRUEBA.M1[1:0]
+(1)BANCODEPRUEBA.M1[1:0]
+@1401200
+-group_end
+@28
+[color] 5
+BANCODEPRUEBA.M2[1:0]
+[color] 5
+BANCODEPRUEBA.M3
+@29
+[color] 3
+BANCODEPRUEBA.Li
+@28
+BANCODEPRUEBA.LCD[2:0]
+BANCODEPRUEBA.CLK1
+BANCODEPRUEBA.CLK2
+BANCODEPRUEBA.ResetManual
+[pattern_trace] 1
+[pattern_trace] 0
