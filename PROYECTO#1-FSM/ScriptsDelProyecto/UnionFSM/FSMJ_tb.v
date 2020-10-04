@@ -62,14 +62,27 @@ initial begin
 end
 
 initial begin
+///////////////////////////////////////////////////////////////////////////////////////
+///En esta parte del testbench se puede cambiar el valor de las variables para
+///modificar la eleccion.
+/// Se puede modificar la variable C por la T para alternar por elegir Cafe o Te
+/// Se puede modificar la variable L por A para alternar en la eleccion de Leche o Agua
+/// Se puede modificar la variable V por N para alternar en la eleccion sin extra
+///           o con Vainilla la bebida.
+/// Se puede modificar el valor de CIN para observar el comportamiento del dispensador
+///           luego de la eleccion.
+/// Se puede colocar desde el inicio E como 0 para observar el comportamiento del
+///           dispensador.
+////////////////////////////////////////////////////////////////////////////////////////
 ResetManual = 1;
 #1 ResetManual = 0; E = 0; C = 0; T = 0; A = 0; L = 0; N = 0; V = 0; CIN = 3'b000;
 #3 C = 1;
 #2 C = 0; L = 1;
-#3 L = 0; V = 1;
+#3 L = 0; V = 1;////////////////////////////////////////////////////////////////////////////////////////
 #2 V = 0; CIN = 3'b111;
 #3 E = 1;
 #2 E = 0;
+////////////////////////////////////////////////////////////////////////////////////////
 end
 
 initial begin
