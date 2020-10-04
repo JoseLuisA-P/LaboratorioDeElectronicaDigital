@@ -27,22 +27,24 @@ reg C,T,L,A,N,V;
 wire [3:0]FuturosSelector;
 wire [3:0]ActualesSelector;
 
-
+//modulos asociados a las FMS
 SFMSelector selector(RESET, CLK1, C, T, L, A, N, V, ActualesSelector, FuturosSelector, SA);
 FSMdisp dispensador(RESET, CLK1, E, taima, taimb, taimc, SA, CIN, M1, M2, M3, Li, LCD, ActualesDispensador, FuturosDispensador);
 
+//modulos asociados a los timmers
 timmerA TIMA(CLK2,RESET,M1,taima, counta);
 timmerB TIMB(CLK2,RESET,M2,taimb, countb);
 timmerC TIMC(CLK2,RESET,M3,taimc, countc);
 
+//logica secuencial para la asignacion de valores a un registro al momento de actualizarse
 always @ ( posedge Li ,posedge ResetManual, posedge CLK1) begin
-  RESET <= 0;
+  RESET <= 0; //para que el reset se mantenga en 0 de no presionar nada
 
-  if(Li == 1)begin
+  if(Li == 1)begin//asignar el valor de LI al reset cuando se active
   RESET <= Li;
   end
 
-  else if(ResetManual == 1) begin
+  else if(ResetManual == 1) begin //asignar el valor del reset manual al reset.
   RESET <= ResetManual;
   end
 end

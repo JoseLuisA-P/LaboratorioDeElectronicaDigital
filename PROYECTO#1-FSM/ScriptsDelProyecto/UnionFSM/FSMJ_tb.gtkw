@@ -1,21 +1,22 @@
 [*]
 [*] GTKWave Analyzer v3.3.77 (w)1999-2016 BSI
-[*] Sat Oct 03 00:17:48 2020
+[*] Sat Oct 03 00:29:51 2020
 [*]
 [dumpfile] "C:\Users\jalva\OneDrive\Desktop\UVG\UVG 4to semestre\Digital\Laboratorios\Laboratorios_de_electronica_Digital\LaboratorioDeElectronicaDigital\PROYECTO#1-FSM\ScriptsDelProyecto\UnionFSM\FSMJ_tb.vcd"
-[dumpfile_mtime] "Sat Oct 03 00:15:37 2020"
-[dumpfile_size] 9543
+[dumpfile_mtime] "Sat Oct 03 00:20:28 2020"
+[dumpfile_size] 9754
 [savefile] "C:\Users\jalva\OneDrive\Desktop\UVG\UVG 4to semestre\Digital\Laboratorios\Laboratorios_de_electronica_Digital\LaboratorioDeElectronicaDigital\PROYECTO#1-FSM\ScriptsDelProyecto\UnionFSM\FSMJ_tb.gtkw"
-[timestart] 0
-[size] 1674 876
-[pos] 401 -144
-*-2.907605 7 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-[sst_width] 197
+[timestart] 125
+[size] 958 1048
+[pos] 722 -166
+*-2.907605 132 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 42
 [signals_width] 222
-[sst_expanded] 1
-[sst_vpaned_height] 249
-@28
+[sst_expanded] 0
+[sst_vpaned_height] 309
+@29
 BANCODEPRUEBA.C
+@28
 BANCODEPRUEBA.T
 BANCODEPRUEBA.L
 BANCODEPRUEBA.A
@@ -23,7 +24,6 @@ BANCODEPRUEBA.N
 BANCODEPRUEBA.V
 @24
 BANCODEPRUEBA.FuturosSelector[3:0]
-@25
 BANCODEPRUEBA.ActualesSelector[3:0]
 @28
 BANCODEPRUEBA.SA[3:0]
