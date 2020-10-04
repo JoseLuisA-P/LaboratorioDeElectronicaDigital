@@ -26,6 +26,13 @@ module BancoDePrueba();
 
 
   initial begin
+
+  ///////////////////////////////////////////////////////////////////////////////
+  /// El numero de prueba de timming previo a la asignacion de las variables
+  /// coincide con la del documento escrito del proyecto.
+  /// ESTOS SON DE LA SECCION DE LA MAQUINA SDISPENSADORA paginas 22 a la 25
+  ///////////////////////////////////////////////////////////////////////////////
+
   //timming 1, transicioines del estado 0 al 1 y restricciones
   RESET = 1; E = 0; A = 0; B = 0; C = 0; CIN = 3'b000; SA = 4'b0000;
   #1 RESET = 0; SA = 4'b0100; CIN = 3'b001; E = 1;

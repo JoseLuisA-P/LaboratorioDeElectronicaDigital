@@ -31,6 +31,7 @@ module SFMSelector(
  Dflop FF1 (areset, clk, Sf, S);
 
 //SON LOS ESTADOS FUTUROS INTERNOS DE LA MAQUINA
+//ECUACIONES se encuentran en la pagina 10 del documento escrito
  assign Sf[3] = (S[3] & ~S[2]) | (S[3] & ~S[1]) | (S[3] & ~S[0]) |(~S[2] & ~S[1] & ~S[0] & ~C & T);
 
  assign Sf[2] = (~S[3] & S[2]) | (S[2] & ~S[1]) | (S[2] & ~S[0]) | (~S[3] & S[1] & ~N & V)
@@ -48,6 +49,7 @@ module SFMSelector(
                 (~S[2] & S[1] & S[0] & ~N) | (~S[2] & S[1] & S[0] & V) | (S[3] & ~S[2] & S[0] & ~V) |
                 (~S[3] & ~S[2] & ~S[1] & ~S[0] & C & ~T);
 //ASIGNACION DE LAS SALIDAS DEL MODULO
+//ECUACIONES se encuentran en la pagina 11 del documento escrito.
   assign SA[3] = S[2] | (S[3] & S[1] & S[0]);
 
   assign SA[2] = (~S[3] & S[2] & S[0]) | (S[3] & S[2] & ~S[0]);

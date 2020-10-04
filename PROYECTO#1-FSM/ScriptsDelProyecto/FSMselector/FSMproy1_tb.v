@@ -14,6 +14,10 @@ initial begin
 end
 
 ///////////////////////////////////////////////////////////////////////////////
+/// El numero de prueba de timming previo a la asignacion de las variables
+/// coincide con la del documento escrito del proyecto.
+/// ESTOS SON DE LA SECCION DE LA MAQUINA SELECTORA paginas 16 a la 21
+///////////////////////////////////////////////////////////////////////////////
 initial begin
 //primera prueba, timming 1
 RESET = 1; Cafe = 0; Te= 0; Leche= 0; Agua = 0; Nada = 0; Vainilla = 0;

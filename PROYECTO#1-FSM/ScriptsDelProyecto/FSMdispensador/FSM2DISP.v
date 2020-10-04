@@ -35,6 +35,7 @@ module FSMdisp(
   Dflop FF1estado (RESET, CLK, Sf, S);
 
 //estados futuros de la maquina de dispensar
+// ecuaciones se encuentran en la pagina 13
 assign Sf[3] = (S[3] & ~S[2] & ~S[1]) | (~S[3] & S[2] & S[1] & ~S[0] & SA[2]);
 
 assign Sf[2] = (~S[3] & S[2] & ~S[1]) | (~S[3] & S[1] & S[0]) | (~S[3] & S[2] & ~SA[2]);
@@ -51,6 +52,7 @@ assign Sf[0] = (~S[2] & ~S[1] & S[0]) | (~S[3] & S[2] & S[1] & S[0]) | (~S[3] & 
                 (~S[3] & ~S[2] & ~S[1] & SA[3] & ~SA[0] & CIN[2] & CIN[1] & CIN[0] & E) |
                 (~S[3] & S[1] & S[0] & SA[1]) | (~S[3] & ~S[1] & S[0] & ~B) ;
 //salidas de la maquina de dispensar
+// ecuaciiones se encuentran en la pagina 15
 assign M1[1] = ~S[3] & ~S[2] & S[1] & ~S[0];
 
 assign M1[0] = ~S[3] & ~S[2] & ~S[1] & S[0];

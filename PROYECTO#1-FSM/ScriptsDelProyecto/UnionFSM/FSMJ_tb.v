@@ -73,6 +73,8 @@ initial begin
 ///           luego de la eleccion.
 /// Se puede colocar desde el inicio E como 0 para observar el comportamiento del
 ///           dispensador.
+/// En el archivo de GTKwave se dejaron indicadores los cuales pueden ser utiles para
+///   observar el comportamiento de la señal (FUNCIONA SOLO CON EL TIMMING ORIGINAL).
 ////////////////////////////////////////////////////////////////////////////////////////
 ResetManual = 1;
 #1 ResetManual = 0; E = 0; C = 0; T = 0; A = 0; L = 0; N = 0; V = 0; CIN = 3'b000;
@@ -86,7 +88,7 @@ ResetManual = 1;
 end
 
 initial begin
-#500 $finish;
+#140 $finish;
 end
 
 initial begin
