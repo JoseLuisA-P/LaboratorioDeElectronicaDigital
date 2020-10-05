@@ -47,7 +47,7 @@ Para realizar la seleccion se tiene que seguir el siguiente orden.
 ### Botones y entradas del dispensador:
 
   - **E**: este boton permite que la maquina de dispensador comience a dispensar.
-  - **CIN**: esta entrada indica el estado de los insumos que dispensa la maquina, de no encontrarse en las condiciones necesarias no permite que se dispense la bebida.
+  - **CIN**: esta entrada indica el estado de los insumos que dispensa la maquina, de no encontrarse en las condiciones necesarias no permite que se dispense la bebida. Al momento de presionar el boton E para dispensar la maquina unicamente puede dispensar si CIN = 111 o si CIN=110 pero la eleccion en el selector es "Ningun extra" es decir SA[2] = 0.
 
 ### Timmers:
 
