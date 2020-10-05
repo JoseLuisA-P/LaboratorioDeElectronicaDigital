@@ -21,7 +21,7 @@ En las carpetas de *FSMdispensador* y *FSMselector* se describe en su testbench 
 
 ### Salida del selector:
 
-  -  **SA**: es la salida del selector y es de 4 bits. En formato *little endian*. Esta comienza en 0000 al inicio.
+  -  **SA**: es la salida del selector y es de 4 bits. Esta comienza en 0000 al inicio.
 
 ### **Comportamiento de la salida del selector ante los botones**:
 
