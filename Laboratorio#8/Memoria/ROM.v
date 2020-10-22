@@ -1,5 +1,12 @@
+///////////////////////////////////////////////////////////////////////////////
+//JOSE LUIS ALVAREZ PINEDA
+//19392
+//Laboratorio electronica digital
+//MemoriaROM laboratorio #08
+///////////////////////////////////////////////////////////////////////////////
+
 module ROM (
-  input wire [0:4095] direccion, //entrada de direccion, para seleccionar localidad
+  input wire [11:0] direccion, //entrada de direccion, para seleccionar localidad
   output wire [7:0] salida //salida para dar los datos de localidad
   );
 

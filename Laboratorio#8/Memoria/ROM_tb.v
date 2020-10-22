@@ -1,5 +1,5 @@
 module testbench();
-reg [0:4095]address; //para seleccionar la localidad
+reg [11:0]address; //para seleccionar la localidad
 wire [7:0] sal; //salida de la direccion
 
 //crear la memoria
