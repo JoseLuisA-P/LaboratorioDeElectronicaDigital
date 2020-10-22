@@ -1,22 +1,20 @@
 [*]
 [*] GTKWave Analyzer v3.3.77 (w)1999-2016 BSI
-[*] Thu Oct 22 19:10:48 2020
+[*] Thu Oct 22 21:07:18 2020
 [*]
 [dumpfile] "C:\Users\jalva\OneDrive\Desktop\UVG\UVG 4to semestre\Digital\Laboratorios\Laboratorios_de_electronica_Digital\LaboratorioDeElectronicaDigital\Laboratorio#8\Memoria\ROM_tb.vcd"
-[dumpfile_mtime] "Thu Oct 22 19:10:25 2020"
-[dumpfile_size] 3194
+[dumpfile_mtime] "Thu Oct 22 21:06:57 2020"
+[dumpfile_size] 3356
 [savefile] "C:\Users\jalva\OneDrive\Desktop\UVG\UVG 4to semestre\Digital\Laboratorios\Laboratorios_de_electronica_Digital\LaboratorioDeElectronicaDigital\Laboratorio#8\Memoria\ROM_tb.gtkw"
-[timestart] 1
-[size] 1588 600
+[timestart] 0
+[size] 1000 600
 [pos] -1 -1
-*-1.907605 14 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-2.907605 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [sst_width] 197
-[signals_width] 134
+[signals_width] 94
 [sst_expanded] 1
 [sst_vpaned_height] 153
-@24
-testbench.sal[7:0]
 @25
-testbench.address[11:0]
+testbench.sal[7:0]
 [pattern_trace] 1
 [pattern_trace] 0

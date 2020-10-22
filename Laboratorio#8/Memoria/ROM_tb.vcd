@@ -1,5 +1,5 @@
 $date
-	Thu Oct 22 13:10:25 2020
+	Thu Oct 22 15:14:39 2020
 $end
 $version
 	Icarus Verilog
@@ -9,9 +9,9 @@ $timescale
 $end
 $scope module testbench $end
 $var wire 8 ! sal [7:0] $end
-$var reg 12 " address [11:0] $end
+$var reg 4096 " address [0:4095] $end
 $scope module memoria $end
-$var wire 12 # direccion [11:0] $end
+$var wire 4096 # direccion [0:4095] $end
 $var wire 8 $ salida [7:0] $end
 $upscope $end
 $upscope $end
@@ -54,32 +54,48 @@ b1010000 $
 b110 "
 b110 #
 #7
-bx !
-bx $
+b1010111 !
+b1010111 $
 b111 "
 b111 #
 #8
+b10101001 !
+b10101001 $
 b1000 "
 b1000 #
 #9
+b11001111 !
+b11001111 $
 b1001 "
 b1001 #
 #10
+b11001011 !
+b11001011 $
 b1010 "
 b1010 #
 #11
+b10111111 !
+b10111111 $
 b1011 "
 b1011 #
 #12
+b10111101 !
+b10111101 $
 b1100 "
 b1100 #
 #13
+b10101010 !
+b10101010 $
 b1101 "
 b1101 #
 #14
+b10111110 !
+b10111110 $
 b1110 "
 b1110 #
 #15
+bx !
+bx $
 b1111 "
 b1111 #
 #16
