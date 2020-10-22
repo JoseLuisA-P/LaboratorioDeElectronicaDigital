@@ -1,5 +1,5 @@
 module testbench();
-reg [0:12]address; //para seleccionar la localidad
+reg [11:0]address; //para seleccionar la localidad
 wire [7:0] sal; //salida de la direccion
 
 //crear la memoria
@@ -8,7 +8,7 @@ ROM memoria (address,sal);
 //para sltar en las direcciones y leerlas en orden
 initial begin
 address = 0;
-forever #4 address = address + 1;
+forever #1 address = address + 1;
 end
 
 //terminar el bucle
