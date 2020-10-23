@@ -23,7 +23,7 @@ module ALU #(parameter N = 4) //Parametro para el tamaño de los bits en las ent
     3'b100: Y = A & ~B; // and logico con b negado
     3'b101: Y = A | ~B ; // or logico con b negado
     3'b110: Y = A - B; // resta aritmetica
-    3'b111: Y = (A<B)? 'b1: 'b0; //si A es menor que B da 1, de lo contrario 0
+    3'b111: Y = (A==B)?'b0:((A<B)? 'b1: 'b0); //si A es menor que B da 1, de lo contrario 0
     default: Y = 0; //si entra cualquier otro valor es 0 por eleccion
   endcase
 

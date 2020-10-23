@@ -11,7 +11,7 @@ ALU #(.N(n)) modALU (selector, A, B, Y); //instanciando el modulo de al ALU y
 
 initial begin
 //declarando los valores de A y B y haciendo que el selector aumente para probar los casos.
-A = 1;
+A = 4;
 B = 4;
 selector = 0;
 forever #1 selector = selector + 1;
