@@ -1,0 +1,39 @@
+$date
+	Thu Oct 29 12:01:22 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testbench $end
+$var wire 13 ! datos [12:0] $end
+$var reg 7 " direccion [6:0] $end
+$scope module ROM $end
+$var wire 7 # direccion [6:0] $end
+$var reg 13 $ datos [12:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1000000001000 $
+b0 #
+b0 "
+b1000000001000 !
+$end
+#2
+b1101000 "
+b1101000 #
+#4
+b100000001000 !
+b100000001000 $
+b101 "
+b101 #
+#6
+b1000000001000 !
+b1000000001000 $
+b1 "
+b1 #
+#100
