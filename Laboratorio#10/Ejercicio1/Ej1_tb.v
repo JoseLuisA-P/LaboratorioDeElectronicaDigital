@@ -16,10 +16,13 @@ initial begin
 reset = 1; ENfetch = 0; ENpc = 0; LOADpc = 0; dataloadpc = 12'd2;
 #1 reset = 0;
 #6 ENpc = 1;
-#2 ENfetch = 1;
+#10 ENfetch = 1;
 
-#50 LOADpc = 1;
+#20 LOADpc = 1;
 #1 LOADpc = 0;
+
+#20 reset = 1; ENpc = 0; ENfetch = 0;
+#1 reset = 0;
 
 end
 
