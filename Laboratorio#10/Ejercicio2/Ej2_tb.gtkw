@@ -1,0 +1,29 @@
+[*]
+[*] GTKWave Analyzer v3.3.77 (w)1999-2016 BSI
+[*] Thu Nov 05 22:02:04 2020
+[*]
+[dumpfile] "D:\UVG\UVG\UVG 4to semestre\Digital\Laboratorios\Laboratorios_de_electronica_Digital\LaboratorioDeElectronicaDigital\Laboratorio#10\Ejercicio2\Ej2_tb.vcd"
+[dumpfile_mtime] "Thu Nov 05 22:00:25 2020"
+[dumpfile_size] 3303
+[savefile] "D:\UVG\UVG\UVG 4to semestre\Digital\Laboratorios\Laboratorios_de_electronica_Digital\LaboratorioDeElectronicaDigital\Laboratorio#10\Ejercicio2\Ej2_tb.gtkw"
+[timestart] 1
+[size] 1526 600
+[pos] -1 -1
+*-1.907605 4 2 4 5 7 9 11 13 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 197
+[signals_width] 158
+[sst_expanded] 1
+[sst_vpaned_height] 153
+@28
+testbench.CLK
+testbench.CarryZero[1:0]
+testbench.selAlu[2:0]
+testbench.Enbusin
+testbench.dataIn[3:0]
+testbench.Enaccu
+testbench.ACCUactual[3:0]
+testbench.Enbusout
+@29
+testbench.BusdeSalida[3:0]
+[pattern_trace] 1
+[pattern_trace] 0
