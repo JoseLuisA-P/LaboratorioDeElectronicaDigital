@@ -4,7 +4,7 @@
 //Ejercicio 1: Laboratorio #10
 
 //Modulo PC
-module Contador(
+module PromCounter(
   input wire reset, clk, LOAD, ENABLE,
   input wire [11:0] Bload,
   output reg [11:0] Y
@@ -28,7 +28,7 @@ module Contador(
 endmodule
 
 //Modulo PROM
-module ROM (
+module PromROM (
   input wire [11:0] direccion, //entrada de direccion, para seleccionar localidad
   output wire [7:0] salida //salida para dar los datos de localidad
   );
@@ -47,7 +47,7 @@ assign salida = memoria[direccion];
 endmodule
 
 //Modulo Fetch
-module Dflop(
+module FETCH(
   input wire clk,reset,enable,
   input wire [7:0] D,
   output reg [7:0] Y);
@@ -65,6 +65,18 @@ module EJ1(
   input wire clk,reset,ENfetch,ENpc,LOADpc,
   input wire [11:0]DataLOADpc,
   output wire [7:0] program_byte,
-  output wire [3:0] instr,oprnd );
+  output wire [3:0] instr,oprnd);
+
+wire[11:0] PC;
+wire[7:0] RomFbus;
+
+//modulo PC
+PromCounter PROG(.reset(reset),.clk(clk),.LOAD(LOADpc),.ENABLE(ENpc),.Bload(DataLOADpc),.Y(PC));
+//modulo ProgramRom
+PromROM PRM(.direccion(PC),.salida(RomFbus));
+//modulo Fetch
+FETCH ft(.reset(reset),.clk(clk),.enable(ENfetch),.D(RomFbus),.Y({instr,oprnd}));
+
+assign program_byte = RomFbus;
 
 endmodule
