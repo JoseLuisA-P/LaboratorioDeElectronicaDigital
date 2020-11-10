@@ -1,7 +1,7 @@
 //Jose Luis Alvarez Pineda
 //19392
 //seccion 21
-//laboratorio #9: buffer tri estado
+//laboratorio #9: buffer tri estado (reutilizado para el proyecto del microprocesador)
 
 module tribuff(
   input wire enable,

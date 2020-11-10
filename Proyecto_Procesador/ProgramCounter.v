@@ -2,10 +2,10 @@
 //JOSE LUIS ALVAREZ PINEDA
 //19392
 //Laboratorio electronica digital
-//Contador laboratorio #08
+//Contador laboratorio #08 (reutilizado para el program counter)
 ///////////////////////////////////////////////////////////////////////////////
 
-module Contador(
+module ProgramCounter(
   input wire reset, clk, LOAD, ENABLE,
   input wire [11:0] Bload,
   output reg [11:0] Y

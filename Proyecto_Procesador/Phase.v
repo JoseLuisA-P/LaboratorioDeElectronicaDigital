@@ -1,7 +1,7 @@
 //Jose Luis Alvarez Pineda
 //19392
 //Seccion 21
-//Laboratorio #09, construccion de un FF tipo T utilizando un FF tipo D
+//Laboratorio #09, construccion de un FF tipo T utilizando un FF tipo D (reutilizado para phase)
 
 module Dflop(
   input wire clk,reset,enable,D,
@@ -15,7 +15,7 @@ module Dflop(
 
 endmodule
 
-module TFLOP(
+module phase(
   input wire clk,reset,enable,
   output wire Y);
 
