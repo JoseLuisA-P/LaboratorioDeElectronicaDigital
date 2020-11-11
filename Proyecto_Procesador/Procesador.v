@@ -20,7 +20,7 @@ wire[11:0]address_ram = {OPRND,PROGRAM_BYTE};
 
 wire C_FLAG,Z_FLAG,PHASE;
 wire[6:0] DECODE_address = {PHASE,C_FLAG,Z_FLAG,INSTR}
-wire[12:0] SEÑALES_DE_CONTROL;
+wire[12:0] SC; //SEÑALES DE CONTROL
 
 wire[3:0] ACCUU;
 wire[3:0] ALU_OUT;
@@ -28,34 +28,34 @@ wire[3:0] DATA_BUS;
 wire ALUC,ALUZ;
 
 //Bloque DECODE
-ROMcase dicode(DECODE_address,SEÑALES_DE_CONTROL);
+ROMcase dicode(DECODE_address,SC);
 
 //bloque de phase y de flags
-phase FASE(clock,reset,PHASE);//falta enable
-Flags banderas(clock,reset,ENABLE,{ALUC,ALUZ},{C_FLAG,Z_FLAG});//falta enable
+phase FASE(clock,reset,PHASE);
+Flags banderas(clock,reset,SC[9],{ALUC,ALUZ},{C_FLAG,Z_FLAG});
 
 //bloque del ProgramCounter, programROM 64X8 y FETCH
-ProgramCounter contador(reset,clock,LOAD,ENABLE,address_ram,PC); //falta enable y load
+ProgramCounter contador(reset,clock,SC[11],SC[12],address_ram,PC);
 ROM opcode(PC,PROGRAM_BYTE);
 Fetch ftch(clock,reset,PHASE,PROGRAM_BYTE,{INSTR,OPRND});
 
 //bloque de la RAM
-RAM memram(address_ram,DATA_BUS,CS,WE,clock,DATA_BUS);//FALTA el CS Y WE
+RAM memram(address_ram,DATA_BUS,SC[5],SC[4],clock,DATA_BUS);
 
 //bloque del BusDriver conectado al fetch
-tribuff delfetch(ENABLE,OPRND,DATA_BUS);//falta enable
+tribuff delfetch(SC[1],OPRND,DATA_BUS);
 
 //bloque del BusDriver conectado a la ALU
-tribuff deALU(ENABLE,ALU_OUT,DATA_BUS);//falta enable
+tribuff deALU(SC[3],ALU_OUT,DATA_BUS);
 
 //bloque del BusDriver entradas de los pushbuttons
-tribuff pushes(ENABLE,pushbuttons,DATA_BUS);//falta enable
+tribuff pushes(SC[2],pushbuttons,DATA_BUS);
 
 //bloque de la ALU y el accu
-ALU operaciones(ACCUU,DATA_BUS,SELECTOR,ALU_OUT,ALUC,ALUZ);//falta selector
-ACCU acumulador(clock,reset,ENABLE,ALU_OUT,ACCUU);//falta enable
+ALU operaciones(ACCUU,DATA_BUS,{SC[8],SC[7],SC[6]},ALU_OUT,ALUC,ALUZ);
+ACCU acumulador(clock,reset,SC[10],ALU_OUT,ACCUU);
 
 //bloque de la salida OUT
-Outputs salida(clock,reset,ENABLE,DATA_BUS,FF_out);//falta enable
+Outputs salida(clock,reset,SC[0],DATA_BUS,FF_out);
 
 endmodule
