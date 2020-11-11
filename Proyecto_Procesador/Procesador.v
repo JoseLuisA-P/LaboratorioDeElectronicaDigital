@@ -16,7 +16,7 @@ module uP(
 wire[11:0] PC;
 wire[7:0] PROGRAM_BYTE;
 wire[3:0] INSTR,OPRND;
-wire[11:0]address_ram = {OPRND,PROGRAM_BYTE};
+wire[11:0] ADDRESS_ram = {OPRND,PROGRAM_BYTE};
 
 wire C_FLAG,Z_FLAG,PHASE;
 wire[6:0] DECODE_address = {PHASE,C_FLAG,Z_FLAG,INSTR}
@@ -27,6 +27,17 @@ wire[3:0] ALU_OUT;
 wire[3:0] DATA_BUS;
 wire ALUC,ALUZ;
 
+//asignacion de salidas
+assign c_flag = ALUC;
+assign z_flag = ALUZ;
+assign instr = INSTR;
+assign oprnd = OPRND;
+assign data_bus = DATA_BUS;
+assign accu = ACCUU;
+assign program_byte = PROGRAM_BYTE;
+assign pc = PC;
+assign address_ram = ADDRESS_ram;
+
 //Bloque DECODE
 ROMcase dicode(DECODE_address,SC);
 
@@ -35,12 +46,12 @@ phase FASE(clock,reset,PHASE);
 Flags banderas(clock,reset,SC[9],{ALUC,ALUZ},{C_FLAG,Z_FLAG});
 
 //bloque del ProgramCounter, programROM 64X8 y FETCH
-ProgramCounter contador(reset,clock,SC[11],SC[12],address_ram,PC);
+ProgramCounter contador(reset,clock,SC[11],SC[12],ADDRESS_ram,PC);
 ROM opcode(PC,PROGRAM_BYTE);
 Fetch ftch(clock,reset,PHASE,PROGRAM_BYTE,{INSTR,OPRND});
 
 //bloque de la RAM
-RAM memram(address_ram,DATA_BUS,SC[5],SC[4],clock,DATA_BUS);
+RAM memram(ADDRESS_ram,DATA_BUS,SC[5],SC[4],clock,DATA_BUS);
 
 //bloque del BusDriver conectado al fetch
 tribuff delfetch(SC[1],OPRND,DATA_BUS);
