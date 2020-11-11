@@ -31,15 +31,16 @@ wire ALUC,ALUZ;
 ROMcase dicode(DECODE_address,SEÑALES_DE_CONTROL);
 
 //bloque de phase y de flags
-phase FASE(clock,reset,ENABLE,PHASE);//falta enable
+phase FASE(clock,reset,PHASE);//falta enable
 Flags banderas(clock,reset,ENABLE,{ALUC,ALUZ},{C_FLAG,Z_FLAG});//falta enable
 
 //bloque del ProgramCounter, programROM 64X8 y FETCH
 ProgramCounter contador(reset,clock,LOAD,ENABLE,address_ram,PC); //falta enable y load
 ROM opcode(PC,PROGRAM_BYTE);
-Fetch ftch(clock,reset,ENABLE,PROGRAM_BYTE,{INSTR,OPRND});//falta enable
+Fetch ftch(clock,reset,PHASE,PROGRAM_BYTE,{INSTR,OPRND});
 
 //bloque de la RAM
+RAM memram(address_ram,DATA_BUS,CS,WE,clock,DATA_BUS);//FALTA el CS Y WE
 
 //bloque del BusDriver conectado al fetch
 tribuff delfetch(ENABLE,OPRND,DATA_BUS);//falta enable
@@ -53,5 +54,8 @@ tribuff pushes(ENABLE,pushbuttons,DATA_BUS);//falta enable
 //bloque de la ALU y el accu
 ALU operaciones(ACCUU,DATA_BUS,SELECTOR,ALU_OUT,ALUC,ALUZ);//falta selector
 ACCU acumulador(clock,reset,ENABLE,ALU_OUT,ACCUU);//falta enable
+
+//bloque de la salida OUT
+Outputs salida(clock,reset,ENABLE,DATA_BUS,FF_out);//falta enable
 
 endmodule
