@@ -6,7 +6,7 @@
 module uP(
   input wire clock,reset,
   input wire [3:0] pushbuttons,
-  output wire c_flag,z_flag,
+  output wire phase,c_flag,z_flag,
   output wire [3:0] instr,oprnd,data_bus,FF_out,accu,
   output wire [7:0] program_byte,
   output wire [11:0] pc,address_ram
@@ -37,6 +37,7 @@ assign accu = ACCUU;
 assign program_byte = PROGRAM_BYTE;
 assign pc = PC;
 assign address_ram = ADDRESS_ram;
+assign phase = PHASE;
 
 //Bloque DECODE
 ROMcase dicode(DECODE_address,SC);

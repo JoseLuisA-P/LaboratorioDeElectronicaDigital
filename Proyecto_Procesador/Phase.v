@@ -8,7 +8,7 @@ module phase(
   output reg Y);
 
   always @ (posedge clk, posedge reset) begin
-    if (reset == 1) Y <= 1;
+    if (reset == 1) Y <= 0;
 
     Y <= ~Y;
   end
