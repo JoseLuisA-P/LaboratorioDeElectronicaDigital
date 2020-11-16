@@ -48,9 +48,8 @@ module Fetch(
   output reg [7:0] Y);
 
   always @ (posedge clk, posedge reset) begin
-    if (reset == 1) Y <= 0;
-    else if(enable == 1) Y <= D;
-    else Y <= Y;
+    if (reset) Y <= 0;
+    else if(enable) Y <= D;
   end
 
 endmodule

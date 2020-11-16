@@ -17,8 +17,8 @@ wire[7:0] PROGRAM_BYTE;
 wire[3:0] INSTR,OPRND;
 wire[11:0] ADDRESS_ram = {OPRND,PROGRAM_BYTE};
 
-wire C_FLAG,Z_FLAG,PHASE;
-wire[6:0] DECODE_address = {PHASE,C_FLAG,Z_FLAG,INSTR};
+wire C_FLAG,Z_FLAG;
+wire[6:0] DECODE_address = {INSTR,C_FLAG,Z_FLAG,phase};
 wire[12:0] SC; //SEÑALES DE CONTROL
 
 wire[3:0] ACCUU;
@@ -46,7 +46,7 @@ Flags banderas(clock,reset,SC[9],{ALUC,ALUZ},{C_FLAG,Z_FLAG});
 //bloque del ProgramCounter, programROM 64X8 y FETCH
 ProgramCounter contador(reset,clock,SC[11],SC[12],ADDRESS_ram,PC);
 ROM opcode(PC,PROGRAM_BYTE);
-Fetch ftch(clock,reset,PHASE,PROGRAM_BYTE,{INSTR,OPRND});
+Fetch ftch(clock,reset,~(phase),PROGRAM_BYTE,{INSTR,OPRND});
 
 //bloque de la RAM
 RAM memram(ADDRESS_ram,DATA_BUS,SC[5],SC[4],clock,DATA_BUS);

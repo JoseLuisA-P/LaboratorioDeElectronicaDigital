@@ -12,7 +12,7 @@ module ProgramCounter(
   );
 
 //variables
-  always @ ( posedge clk, posedge LOAD, posedge reset) begin
+  always @ ( posedge clk, posedge reset) begin
 
   if(reset == 1) begin
   Y <= 12'b0;
@@ -23,7 +23,7 @@ module ProgramCounter(
   end
 
   else if(ENABLE == 1)begin
-  Y <= Y + 12'd1;
+  Y <= Y + 1;
   end
 
   end
