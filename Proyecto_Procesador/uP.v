@@ -49,7 +49,7 @@ ROM opcode(PC,PROGRAM_BYTE);
 Fetch ftch(clock,reset,~(phase),PROGRAM_BYTE,{INSTR,OPRND});
 
 //bloque de la RAM
-RAM memram(ADDRESS_ram,DATA_BUS,SC[5],SC[4],clock,DATA_BUS);
+RAM memram(ADDRESS_ram,DATA_BUS,SC[5],SC[4],DATA_BUS);
 
 //bloque del BusDriver conectado al fetch
 tribuff delfetch(SC[1],OPRND,DATA_BUS);
