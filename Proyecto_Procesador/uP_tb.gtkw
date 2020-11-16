@@ -1,0 +1,36 @@
+[*]
+[*] GTKWave Analyzer v3.3.77 (w)1999-2016 BSI
+[*] Mon Nov 16 16:29:55 2020
+[*]
+[dumpfile] "D:\UVG\UVG\UVG 4to semestre\Digital\Laboratorios\Laboratorios_de_electronica_Digital\LaboratorioDeElectronicaDigital\Proyecto_Procesador\uP_tb.vcd"
+[dumpfile_mtime] "Mon Nov 16 16:28:15 2020"
+[dumpfile_size] 8049
+[savefile] "D:\UVG\UVG\UVG 4to semestre\Digital\Laboratorios\Laboratorios_de_electronica_Digital\LaboratorioDeElectronicaDigital\Proyecto_Procesador\uP_tb.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-3.000000 15 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 197
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 153
+@28
+testbench.clock
+testbench.phase
+testbench.reset
+@22
+testbench.PC[11:0]
+testbench.program_byte[7:0]
+testbench.oprnd[3:0]
+@23
+testbench.instr[3:0]
+@22
+testbench.address_RAM[11:0]
+@28
+testbench.c_flag
+testbench.z_flag
+@22
+testbench.accu[3:0]
+testbench.pushbuttons[3:0]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -9,17 +9,16 @@ module uP(
   output wire phase,c_flag,z_flag,
   output wire [3:0] instr,oprnd,data_bus,FF_out,accu,
   output wire [7:0] program_byte,
-  output wire [11:0] pc,address_ram
+  output wire [11:0] PC,address_RAM
   );
 
 //conexiones internas en el procesador
-wire[11:0] PC;
 wire[7:0] PROGRAM_BYTE;
 wire[3:0] INSTR,OPRND;
 wire[11:0] ADDRESS_ram = {OPRND,PROGRAM_BYTE};
 
 wire C_FLAG,Z_FLAG,PHASE;
-wire[6:0] DECODE_address = {PHASE,C_FLAG,Z_FLAG,INSTR}
+wire[6:0] DECODE_address = {PHASE,C_FLAG,Z_FLAG,INSTR};
 wire[12:0] SC; //SEÑALES DE CONTROL
 
 wire[3:0] ACCUU;
@@ -35,15 +34,13 @@ assign oprnd = OPRND;
 assign data_bus = DATA_BUS;
 assign accu = ACCUU;
 assign program_byte = PROGRAM_BYTE;
-assign pc = PC;
-assign address_ram = ADDRESS_ram;
-assign phase = PHASE;
+assign address_RAM = ADDRESS_ram;
 
 //Bloque DECODE
 ROMcase dicode(DECODE_address,SC);
 
 //bloque de phase y de flags
-phase FASE(clock,reset,PHASE);
+Tflop FASE(clock,reset,phase);
 Flags banderas(clock,reset,SC[9],{ALUC,ALUZ},{C_FLAG,Z_FLAG});
 
 //bloque del ProgramCounter, programROM 64X8 y FETCH

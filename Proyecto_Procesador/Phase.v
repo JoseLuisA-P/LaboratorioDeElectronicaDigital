@@ -1,16 +1,14 @@
 //Jose Luis Alvarez Pineda
 //19392
 //Seccion 21
-//Laboratorio #09, construccion de un FF tipo T utilizando un FF tipo D (reutilizado para phase)
 
-module phase(
-  input wire clk,reset
+module Tflop(
+  input wire clk,reset,
   output reg Y);
 
-  always @ (posedge clk, posedge reset) begin
-    if (reset == 1) Y <= 0;
-
-    Y <= ~Y;
+  always @ (posedge reset or posedge clk) begin
+    if (reset) Y <= 0;
+    else Y <= ~Y;
   end
 
 endmodule

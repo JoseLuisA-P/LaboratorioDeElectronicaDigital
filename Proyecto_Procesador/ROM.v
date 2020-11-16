@@ -15,7 +15,7 @@ reg [7:0] memoria[0:4095];
 
 //para leer la memoria en binario ante cada fila
 initial begin
-  $readmemb("MemROM.txt", memoria);
+  $readmemh("memory.list", memoria);
 end
 
 //asignar a la salida el valor de la memoria en esa localidad
