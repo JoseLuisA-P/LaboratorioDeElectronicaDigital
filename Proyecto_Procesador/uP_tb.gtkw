@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.77 (w)1999-2016 BSI
-[*] Mon Nov 16 21:35:01 2020
+[*] Mon Nov 16 22:13:19 2020
 [*]
 [dumpfile] "D:\UVG\UVG\UVG 4to semestre\Digital\Laboratorios\Laboratorios_de_electronica_Digital\LaboratorioDeElectronicaDigital\Proyecto_Procesador\uP_tb.vcd"
-[dumpfile_mtime] "Mon Nov 16 21:34:56 2020"
-[dumpfile_size] 21772
+[dumpfile_mtime] "Mon Nov 16 22:08:45 2020"
+[dumpfile_size] 21707
 [savefile] "D:\UVG\UVG\UVG 4to semestre\Digital\Laboratorios\Laboratorios_de_electronica_Digital\LaboratorioDeElectronicaDigital\Proyecto_Procesador\uP_tb.gtkw"
-[timestart] 107
+[timestart] 74
 [size] 958 1048
-[pos] -1 -1
-*-5.000000 153 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] 884 -1
+*-5.000000 105 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] testbench.
 [treeopen] testbench.uPmodule.
 [sst_width] 197
@@ -23,7 +23,6 @@ testbench.phase
 @22
 testbench.PC[11:0]
 testbench.program_byte[7:0]
-testbench.FF_out[3:0]
 testbench.instr[3:0]
 testbench.oprnd[3:0]
 @28
@@ -35,8 +34,9 @@ testbench.z_flag
 testbench.data_bus[3:0]
 testbench.accu[3:0]
 @23
-testbench.pushbuttons[3:0]
+testbench.FF_out[3:0]
 @22
+testbench.pushbuttons[3:0]
 testbench.address_RAM[11:0]
 [pattern_trace] 1
 [pattern_trace] 0
