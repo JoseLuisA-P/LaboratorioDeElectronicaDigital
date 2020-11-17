@@ -1,19 +1,15 @@
-4F   // 0x000    LIT    0xF
-43   // 0x001    LIT    0x3
-C1   // 0x002    JMP    0x123
-23   // 0x003
-@123
-A1   // 0x123    ADDI    0x1
-DA   // 0x124    OUT     0xA
-5F   // 0x125    IN      0xF
-72   // 0x126    ST      0x234
-34   // 0x127
-41   // 0x128    LIT     0x1
-B2   // 0x129    ADDM    0x234
-34   // 0x12A
-28   // 0x12B    CMPI    0x8
-10   // 0x12C    JC      0x000
-00   // 0x12D
-40   // 0x12E    LIT     0x0
-80   // 0x12F    JZ      0x000
-01   // 0x130
+4A	//0 	LIT	0X10	PROBANDO LOS COMANDOS INMEDIATOS
+A3	//1 	ADDI	0X03 
+D0	//2	OUT 	0X00
+50	//3	IN	0X00
+26	//4	CMPI	0X06
+E6	//5	NANDI	0X06
+72	//6	ST	0X234	PROBANDO LOS COMANDOS DE LA RAM
+34	//7	
+40	//8	LIT	0X00
+62	//9	LD	0X234
+34	//10
+
+
+
+

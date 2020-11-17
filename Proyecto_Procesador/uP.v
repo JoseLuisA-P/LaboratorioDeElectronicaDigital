@@ -27,8 +27,8 @@ wire[3:0] DATA_BUS;
 wire ALUC,ALUZ;
 
 //asignacion de salidas
-assign c_flag = ALUC;
-assign z_flag = ALUZ;
+assign c_flag = C_FLAG;
+assign z_flag = Z_FLAG;
 assign instr = INSTR;
 assign oprnd = OPRND;
 assign data_bus = DATA_BUS;
