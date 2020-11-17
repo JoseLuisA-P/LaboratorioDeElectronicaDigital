@@ -25,7 +25,7 @@ module testbench();
                 .address_RAM(address_RAM));
 
     initial
-        #500 $finish;
+        #900 $finish;
 
     initial begin
         #84
