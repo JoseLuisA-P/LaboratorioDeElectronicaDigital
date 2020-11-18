@@ -1,0 +1,51 @@
+[*]
+[*] GTKWave Analyzer v3.3.77 (w)1999-2016 BSI
+[*] Tue Nov 17 14:21:59 2020
+[*]
+[dumpfile] "D:\UVG\UVG\UVG 4to semestre\Digital\Laboratorios\Laboratorios_de_electronica_Digital\LaboratorioDeElectronicaDigital\Proyecto_Procesador\uP_tb.vcd"
+[dumpfile_mtime] "Tue Nov 17 14:18:00 2020"
+[dumpfile_size] 36339
+[savefile] "D:\UVG\UVG\UVG 4to semestre\Digital\Laboratorios\Laboratorios_de_electronica_Digital\LaboratorioDeElectronicaDigital\Proyecto_Procesador\uP_tb.gtkw"
+[timestart] 602
+[size] 992 1048
+[pos] -164 -1
+*-4.000000 646 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testbench.uPmodule.
+[sst_width] 197
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 310
+@28
+testbench.reset
+testbench.clock
+testbench.phase
+@24
+testbench.PC[11:0]
+@22
+testbench.program_byte[7:0]
+testbench.instr[3:0]
+testbench.oprnd[3:0]
+@28
+[color] 3
+testbench.c_flag
+[color] 3
+testbench.z_flag
+@23
+testbench.data_bus[3:0]
+@c00022
+testbench.accu[3:0]
+@28
+(0)testbench.accu[3:0]
+(1)testbench.accu[3:0]
+(2)testbench.accu[3:0]
+(3)testbench.accu[3:0]
+@1401200
+-group_end
+@22
+testbench.FF_out[3:0]
+testbench.pushbuttons[3:0]
+testbench.address_RAM[11:0]
+[color] 2
+testbench.uPmodule.operaciones.Y[3:0]
+[pattern_trace] 1
+[pattern_trace] 0
