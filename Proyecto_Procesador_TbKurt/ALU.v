@@ -22,18 +22,18 @@ module ALU(
         default: RESalu = 0;//si entra cualquier otro valor es 0 por eleccion
       endcase
 
-      if (RESalu[3:0] == 0) begin
+      if (RESalu[3:0] == 0) begin //revisar si el valor es cero
         ZERO = 1;
       end
       else begin
         ZERO = 0;
       end
 
-      C <= RESalu[4];
+      C <= RESalu[4]; //pasar el valor a la bandera del carry
 
       end
 
-    assign Y = RESalu[3:0];
+    assign Y = RESalu[3:0];//asignar solo los 4 bits a la salida
 
 
 

@@ -14,15 +14,15 @@ module ProgramCounter(
 //variables
   always @ ( posedge clk, posedge reset) begin
 
-  if(reset == 1) begin
+  if(reset == 1) begin//reiniciar el contador
   Y <= 12'b0;
   end
 
-  else if(LOAD == 1) begin
+  else if(LOAD == 1) begin//precargar el valor en el contador
   Y <= Bload;
   end
 
-  else if(ENABLE == 1)begin
+  else if(ENABLE == 1)begin//contar normlamente
   Y <= Y + 1;
   end
 
