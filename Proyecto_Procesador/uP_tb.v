@@ -7,7 +7,6 @@ module testbench();
     wire [7:0] program_byte;
     wire [11:0] PC, address_RAM;
 
-    integer nota = 0;
 
     uP uPmodule(.clock(clock),
                 .reset(reset),
@@ -27,22 +26,12 @@ module testbench();
     initial
         #900 $finish;
 
-    initial begin
-        #84
-        $display("PC: %h\taccu: %h",PC,accu);
-        if (PC === 12'h124 && accu === 4'h4) begin
-            nota = nota + 5;
-            $display("ADDI funciona bien. Su nota es: %d", nota);
-        end
-        else
-            $display("ADDI NO funciona bien. Su nota es: %d", nota);
-    end
 
     always
         #5 clock = ~clock;
 
     initial begin
-        clock = 0; reset = 0; pushbuttons = 4'b0110; nota = 0;
+        clock = 0; reset = 0; pushbuttons = 4'b0110;
         #2 reset = 1;
         #1 reset = 0;
     end
